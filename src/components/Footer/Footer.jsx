@@ -2,18 +2,27 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Footer() {
+
+	const socialLink = [
+		{ name: 'facebook', icon: '/assets/img/icons/facebook.png', link: '' },
+		{ name: 'twitter', icon: '/assets/img/icons/twitter.png', link: '' },
+		{ name: 'google', icon: '/assets/img/icons/google.png', link: '' },
+		{ name: 'linkedIn', icon: '/assets/img/icons/linkedin.png', link: '' },
+	]
+
 	return (
 		<>
 			<footer className="bg-[#4DD4D4] text-white">
 				<div className="container mx-auto px-4 py-8">
-					<div className="flex justify-center space-x-4 mb-6">
-						{[ 'Facebook', 'Twitter', 'Instagram', 'LinkedIn' ].map((social) => (
+					<div className="flex justify-center space-x-6 mb-6">
+						{socialLink?.map((social) => (
 							<Link
-								key={social}
+								key={`/${social?.link}`}
 								href="#"
-								className="w-8 h-8 rounded-full bg-white text-[#4DD4D4] flex items-center justify-center"
+								className="w-12 h-12 p-3 rounded-full bg-white text-[#4DD4D4] flex items-center justify-center"
 							>
-								<span className="sr-only">{social}</span>
+								<img src={social?.icon} alt="" />
+								<span className="sr-only">{social?.name}</span>
 							</Link>
 						))}
 					</div>

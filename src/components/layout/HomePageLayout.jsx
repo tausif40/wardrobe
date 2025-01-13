@@ -12,9 +12,9 @@ function HomePageLayout() {
 			<AboutUs />
 			<Services />
 			<OurDesign />
-			<div className='container'>
+			<div className='my-16'>
 				<CTA />
-			</div>
+			</div >
 		</>
 	)
 }

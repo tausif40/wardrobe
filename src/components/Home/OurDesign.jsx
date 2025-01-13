@@ -4,43 +4,67 @@ function OurDesign() {
 	const [ images, setImages ] = useState([]);
 
 	useEffect(() => {
-		// Dynamically generate image paths
-		const imageFolderPath = '/assets/img/';
-		const maxImages = 10; // Define the maximum number of expected images
+		const imageFolderPath = '/assets/img/ourDesign/img';
+		const maxImages = 9;
 
 		const tempImages = [];
 		for (let i = 1; i <= maxImages; i++) {
-			const imgPath = `${imageFolderPath}${i}.jpg`;
+			const imgPath = `${imageFolderPath}${i}.jpeg`;
 
-			// Check if the image exists (using fetch)
 			fetch(imgPath, { method: 'HEAD' })
 				.then((response) => {
 					if (response.ok) {
+						setImages([ ...tempImages ]);
 						tempImages.push(imgPath);
-						setImages([ ...tempImages ]); // Update state with the valid images
 					}
 				})
 				.catch((err) => console.error('Image not found:', imgPath));
 		}
 	}, []);
 
+	useEffect(() => {
+		const loadImages = async () => {
+			const imageFolderPath = '/assets/img/ourDesign/img';
+			const maxImages = 9;
+			const tempImages = [];
+
+			for (let i = 1; i <= maxImages; i++) {
+				const imgPath = `${imageFolderPath}${i}.jpeg`;
+
+				try {
+					const response = await fetch(imgPath, { method: 'HEAD' });
+					if (response.ok) {
+						setImages([ ...tempImages ]);
+						tempImages.push(imgPath);
+					} else {
+						console.warn(`Image not found or error status: ${imgPath} - Status: ${response.status}`); // More informative logging
+					}
+				} catch (error) {
+					console.error(`Error fetching image ${imgPath}:`, error);
+				}
+			}
+		};
+
+		loadImages();
+	}, []);
+
 	return (
 		<>
-			<section className="py-16">
-				<div className="container mx-auto px-4">
-					<h2 className="text-3xl font-bold text-center mb-12">Our Design</h2>
-					<div className="grid grid-cols-4 gap-4">
+			<section className="py-10 bg-gray-100 mb-10">
+				<div className="mx-auto">
+					<h2 className="text-5xl text-heading font-bold text-center mb-12">Our Design</h2>
+					<div className="grid grid-cols-2 md:grid-cols-4">
 						{images.map((imgSrc, index) => (
 							<img
 								key={index}
 								src={imgSrc}
-								alt={`Design ${index + 1}`}
-								style={{ width: '150px', height: 'auto' }}
+								alt={`img ${index + 1}`}
+								className='h-72 object-cover'
 							/>
 						))}
 					</div>
-					<div className="text-center mt-8">
-						<button className="bg-[#4DD4D4] text-white px-8 py-2 rounded hover:bg-[#3AA0A0]">
+					<div className="text-center mt-6">
+						<button className="text-white border bg-mySky px-6 py-2 rounded-full hover:bg-darkSky hover:text-white transition-all">
 							VIEW GALLERY
 						</button>
 					</div>

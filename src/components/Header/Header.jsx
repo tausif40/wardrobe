@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Mail, Phone, Search } from 'lucide-react';
 import { GrGooglePlus } from "react-icons/gr";
 import { BsInstagram } from "react-icons/bs";
@@ -6,6 +6,8 @@ import { FaFacebookF } from "react-icons/fa";
 import { IoLogoTwitter } from "react-icons/io";
 
 const Header = () => {
+	let location = useLocation();
+	console.log(location);
 	const headerData = {
 		contactInfo: { phone: "01708 7 56789", email: "info@bestfittedwardrobe.co.uk" },
 		socialLinks: [
@@ -16,8 +18,8 @@ const Header = () => {
 		],
 		navigationLinks: [
 			{ title: "HOME", link: "/" },
-			{ title: "ABOUT US", link: "/about" },
-			{ title: "WARDROBES", link: "/wardrobes" },
+			{ title: "ABOUT US", link: "/about-us" },
+			{ title: "WARDROBES", link: "/Wardrobes" },
 			{ title: "SLIDING WARDROBES", link: "/sliding-wardrobes" },
 			{ title: "BUILT IN WARDROBES", link: "/built-in-wardrobes" },
 			{ title: "FITTED KITCHENS", link: "/fitted-kitchens" },
@@ -72,7 +74,7 @@ const Header = () => {
 					<ul className="flex flex-wrap justify-between">
 						{headerData.navigationLinks.map((navLink, index) => (
 							<li key={index}>
-								<Link to={navLink.link} className="block px-4 py-3 hover:bg-[#6BC7D9]">{navLink.title}</Link>
+								<Link to={navLink.link} className={`block px-4 py-3 hover:bg-[#6BC7D9] ${location.pathname == navLink.link && 'text-primary'}`}>{navLink.title}</Link>
 							</li>
 						))}
 						<li className="bg-primary px-4 py-3">

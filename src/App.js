@@ -5,8 +5,13 @@ import HomePageLayout from './components/layout/HomePageLayout';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import TermsAndConditions from './components/TermsAndConditions/TermsAndConditions';
-import Wardrobe from './components/Wardrobe/Wardrobe';
 import ContactUs from './components/ContactUs/ContactUs';
+import AboutUs from './components/AboutUs/AboutUs';
+import Wardrobes from './components/Wardrobe/Wardrobes';
+import SlidingWardrobes from './components/page/SlidingWardrobes';
+import BuiltInWardrobes from './components/page/BuiltInWardrobes';
+import FittedKitchens from './components/page/FittedKitchens';
+import Sale from './components/page/Sale';
 
 
 function App() {
@@ -18,8 +23,13 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePageLayout />} />
         <Route path="/terms-conditions" element={<TermsAndConditions />} />
-        <Route path="/wardrobe" element={<Wardrobe />} />
+        <Route path="/wardrobes" element={<Wardrobes />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/sliding-wardrobes" element={<SlidingWardrobes />} />
+        <Route path="/built-in-wardrobes" element={<BuiltInWardrobes />} />
+        <Route path="/fitted-kitchens" element={<FittedKitchens />} />
+        <Route path="/sale" element={<Sale />} />
       </Routes>
 
       <Footer />

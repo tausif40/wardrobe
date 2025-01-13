@@ -10,7 +10,7 @@ module.exports = {
         primaryDark: "#d6dd52",
         mySky: "#4dd0e1",
         darkSky: "#45c0d0",
-        text: "#3f3e3e",
+        text: "#535353",
         heading: "#013d8e",
         headingGray: "#333333",
 
