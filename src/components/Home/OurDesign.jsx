@@ -37,7 +37,7 @@ function OurDesign() {
 						setImages([ ...tempImages ]);
 						tempImages.push(imgPath);
 					} else {
-						console.warn(`Image not found or error status: ${imgPath} - Status: ${response.status}`); // More informative logging
+						console.warn(`Image not found or error status: ${imgPath} - Status: ${response.status}`);
 					}
 				} catch (error) {
 					console.error(`Error fetching image ${imgPath}:`, error);
@@ -59,7 +59,7 @@ function OurDesign() {
 								key={index}
 								src={imgSrc}
 								alt={`img ${index + 1}`}
-								className='h-72 object-cover'
+								className='object-contain'
 							/>
 						))}
 					</div>

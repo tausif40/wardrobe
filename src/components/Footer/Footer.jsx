@@ -12,7 +12,7 @@ function Footer() {
 
 	return (
 		<>
-			<footer className="bg-[#4DD4D4] text-white">
+			<footer className="bg-mySky text-white">
 				<div className="container mx-auto px-4 py-8">
 					<div className="flex justify-center space-x-6 mb-6">
 						{socialLink?.map((social) => (
@@ -26,22 +26,23 @@ function Footer() {
 							</Link>
 						))}
 					</div>
-					<nav className="flex justify-center space-x-6 text-sm mb-4">
-						<Link href="#" className="hover:underline">HOME</Link>
-						<Link href="#" className="hover:underline">ABOUT US</Link>
-						<Link href="#" className="hover:underline">WARDROBES</Link>
-						<Link href="#" className="hover:underline">SLIDING WARDROBES</Link>
-						<Link href="#" className="hover:underline">BUILT IN WARDROBES</Link>
-						<Link href="#" className="hover:underline">FITTED KITCHENS</Link>
-						<Link href="#" className="hover:underline">SALE</Link>
-						<Link href="#" className="hover:underline">GALLERY</Link>
-						<Link href="#" className="hover:underline">CONTACT US</Link>
+					<nav className="flex justify-center flex-wrap gap-y-3 text-sm mb-4">
+						<Link href="#" className="px-4 border-r">HOME</Link>
+						<Link href="#" className="px-4 border-r">ABOUT US</Link>
+						<Link href="#" className="px-4 border-r">WARDROBES</Link>
+						<Link href="#" className="px-4 border-r">SLIDING WARDROBES</Link>
+						<Link href="#" className="px-4 border-r">BUILT IN WARDROBES</Link>
+						<Link href="#" className="px-4 border-r">FITTED KITCHENS</Link>
+						<Link href="#" className="px-4 border-r">SALE</Link>
+						<Link href="#" className="px-4 border-r">GALLERY</Link>
+						<Link href="#" className="px-4">CONTACT US</Link>
 					</nav>
-					<p className="text-center text-sm">
-						© COPYRIGHT © 2023 BEST FITTED WARDROBE | ALL RIGHTS RESERVED
+					<p className="text-center text-sm mt-8">
+						© COPYRIGHT © 2023 BEST FITTED WARDROBE <br />
+						ALL RIGHTS RESERVED
 					</p>
 				</div>
-			</footer>
+			</footer >
 		</>
 	)
 }

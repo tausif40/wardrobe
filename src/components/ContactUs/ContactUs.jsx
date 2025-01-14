@@ -4,7 +4,7 @@ import CTA from '../page/CTA';
 const ContactUs = () => {
 	return (
 		<>
-			<div div className='h-[450px] bg-gray-200 overflow-hidden' >
+			<div div className='max-h-[450px] bg-gray-200 overflow-hidden' >
 				<img src="/assets/img/bed1.jpeg" alt="" className='w-full object-cover' />
 			</div >
 
@@ -40,7 +40,7 @@ const ContactUs = () => {
 				{/* Get in Touch Section */}
 				<div className="relative mb-12">
 					<div className="absolute inset-0 bg-[#2A9D8F] opacity-90"></div>
-					<div className="relative z-10 py-12 text-center text-white">
+					<div className="relative z-10 px-4 py-12 text-center text-white">
 						<h2 className="text-4xl font-bold mb-8">Get in touch</h2>
 						<form className="max-w-md mx-auto space-y-4 flex flex-col">
 							<input type="text" placeholder="Name" className="bg-white px-4 py-2" />

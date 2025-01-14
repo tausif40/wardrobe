@@ -30,7 +30,7 @@ h4 {
 }
 
 :root {
-	--padding-inline-section: 24px;
+	--padding-inline-section: 20px;
 	--primary-color: #dce775,
 	--primary-dark-color: #d6dd52,
   --secondary: #4dd0e1,
@@ -40,7 +40,7 @@ h4 {
   }
 
 .container {
-	max-width: 1280px;
+	max-width: 1300px;
 	margin-inline: auto;
 	padding-inline: var(--padding-inline-section);
 	overflow: hidden;

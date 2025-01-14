@@ -4,7 +4,7 @@ import CTA from './CTA'
 function Sale() {
 	return (
 		<>
-			<div className='h-[350px] w-full overflow-hidden bg-gray-300'>
+			<div className='max-h-[400px] w-full overflow-hidden bg-gray-300'>
 				<img src='/assets/img/sale-banner.jpg' alt="Banner" className='object-bottom w-full' />
 			</div>
 			<div className='container mx-auto mt-8 px-4 py-8'>

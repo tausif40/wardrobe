@@ -6,7 +6,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import TermsAndConditions from './components/TermsAndConditions/TermsAndConditions';
 import ContactUs from './components/ContactUs/ContactUs';
-import AboutUs from './components/AboutUs/AboutUs';
+import AboutUs from './components/page/AboutUs';
 import Wardrobes from './components/Wardrobe/Wardrobes';
 import SlidingWardrobes from './components/page/SlidingWardrobes';
 import BuiltInWardrobes from './components/page/BuiltInWardrobes';
@@ -19,7 +19,6 @@ function App() {
     <>
       <Toaster position="top-right" reverseOrder={true} />
       <Header />
-
       <Routes>
         <Route path="/" element={<HomePageLayout />} />
         <Route path="/terms-conditions" element={<TermsAndConditions />} />

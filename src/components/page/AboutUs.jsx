@@ -1,6 +1,6 @@
 import React from 'react'
 import { ChevronLeft, ChevronRight, Mail, Phone } from 'lucide-react'
-import CTA from '../page/CTA'
+import CTA from './CTA'
 import Banner from '../Template/Banner';
 
 function AboutUs() {
@@ -8,7 +8,7 @@ function AboutUs() {
 		banner: "/assets/img/aboutBanner.jpg",
 		header: "ABOUT US",
 		image: {
-			src: "/assets/img/aboutBanner.jpg",
+			src: "/assets/img/about.jpeg",
 			alt: "Modern fitted wardrobe",
 			width: 450,
 			height: 320,
@@ -27,7 +27,7 @@ function AboutUs() {
 	return (
 		<>
 			<Banner data={data} />
-			<div className='my-20'>
+			<div className='mt-10 mb-14'>
 				<CTA />
 			</div>
 		</>
