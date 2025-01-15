@@ -12,13 +12,28 @@ import SlidingWardrobes from './components/page/SlidingWardrobes';
 import BuiltInWardrobes from './components/page/BuiltInWardrobes';
 import FittedKitchens from './components/page/FittedKitchens';
 import Sale from './components/page/Sale';
-
+import Cookies from 'js-cookie';
+import { useEffect, useState } from 'react';
+import CookiePolicy from './components/CookiePolicy/CookiePolicy';
 
 function App() {
+  const [ isVisible, setIsVisible ] = useState(false);
+
+  useEffect(() => {
+    const hasAccepted = Cookies.get("cookiesAccepted");
+    if (!hasAccepted) {
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
     <>
       <Toaster position="top-right" reverseOrder={true} />
       <Header />
+      {isVisible && <CookiePolicy />}
       <Routes>
         <Route path="/" element={<HomePageLayout />} />
         <Route path="/terms-conditions" element={<TermsAndConditions />} />
