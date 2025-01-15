@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom'
 function Footer() {
 
 	const socialLink = [
-		{ name: 'facebook', icon: '/assets/img/icons/facebook.png', link: '' },
+		{ name: 'facebook', icon: '/assets/img/icons/facebook.png', link: 'https://www.facebook.com/BestFittedWardrobe' },
 		{ name: 'twitter', icon: '/assets/img/icons/twitter.png', link: '' },
 		{ name: 'google', icon: '/assets/img/icons/google.png', link: '' },
 		{ name: 'linkedIn', icon: '/assets/img/icons/linkedin.png', link: '' },
 	]
+
+
 
 	return (
 		<>
@@ -20,6 +22,7 @@ function Footer() {
 								key={`/${social?.link}`}
 								href="#"
 								className="w-12 h-12 p-3 rounded-full bg-white text-[#4DD4D4] flex items-center justify-center"
+								target='_blank'
 							>
 								<img src={social?.icon} alt="" />
 								<span className="sr-only">{social?.name}</span>
@@ -27,15 +30,15 @@ function Footer() {
 						))}
 					</div>
 					<nav className="flex justify-center flex-wrap gap-y-3 text-sm mb-4">
-						<Link href="#" className="px-4 border-r">HOME</Link>
-						<Link href="#" className="px-4 border-r">ABOUT US</Link>
-						<Link href="#" className="px-4 border-r">WARDROBES</Link>
-						<Link href="#" className="px-4 border-r">SLIDING WARDROBES</Link>
-						<Link href="#" className="px-4 border-r">BUILT IN WARDROBES</Link>
-						<Link href="#" className="px-4 border-r">FITTED KITCHENS</Link>
-						<Link href="#" className="px-4 border-r">SALE</Link>
-						<Link href="#" className="px-4 border-r">GALLERY</Link>
-						<Link href="#" className="px-4">CONTACT US</Link>
+						<Link href="/" className="px-4 border-r hover:text-pretty">Home</Link>
+						<Link href="/about-us" className="px-4 border-r">ABOUT US</Link>
+						<Link href="/Wardrobes" className="px-4 border-r">WARDROBES</Link>
+						<Link href="/sliding-wardrobes" className="px-4 border-r">SLIDING WARDROBES</Link>
+						<Link href="/built-in-wardrobes" className="px-4 border-r">BUILT IN WARDROBES</Link>
+						<Link href="/built-in-wardrobes" className="px-4 border-r">FITTED KITCHENS</Link>
+						<Link href="/sale" className="px-4 border-r">SALE</Link>
+						<Link href="/gallery" className="px-4 border-r">GALLERY</Link>
+						<Link href="/contact" className="px-4">CONTACT US</Link>
 					</nav>
 					<p className="text-center text-sm mt-8">
 						© COPYRIGHT © 2023 BEST FITTED WARDROBE <br />

@@ -8,6 +8,7 @@ import { IoLogoTwitter } from "react-icons/io";
 import { PiLineVerticalLight } from "react-icons/pi";
 import MobileHeader from './MobileHeader';
 import DeviceChecker from '../../utils/DeviceChecker';
+import { FaXTwitter } from "react-icons/fa6";
 
 
 const Header = () => {
@@ -34,9 +35,9 @@ const Header = () => {
 	const headerData = {
 		contactInfo: { phone: "01708 7 56789", email: "info@bestfittedwardrobe.co.uk" },
 		socialLinks: [
-			{ platform: FaFacebookF, link: "#" },
+			{ platform: FaFacebookF, link: "https://www.facebook.com/BestFittedWardrobe" },
+			{ platform: FaXTwitter, link: "#" },
 			{ platform: GrGooglePlus, link: "#" },
-			{ platform: IoLogoTwitter, link: "#" },
 			{ platform: BsInstagram, link: "#" }
 		],
 		navigationLinks: [
@@ -87,7 +88,7 @@ const Header = () => {
 					{/* Social Icons */}
 					<div className="lg:flex gap-3 hidden lg:block">
 						{headerData.socialLinks.map((social, index) => (
-							<Link key={index} href={social.link} className="bg-[#78D7E9] p-2 rounded-full hover:bg-[#6BC7D9]">
+							<Link key={index} href={social.link} className="bg-[#78D7E9] p-2 rounded-full hover:bg-[#6BC7D9]" target='_blank'>
 								{<social.platform className="h-5 w-5 text-white" />}
 							</Link>
 						))}
@@ -127,7 +128,7 @@ const Header = () => {
 				<div className="container mx-auto md:py-2">
 					<div className="md:px-2 lg:px-16 xl:px-20 md:flex items-center justify-between gap-6 text-sm text-gray-600">
 						{headerData.features.map((feature, index) => (
-							<div key={index} className="flex items-center gap-2 md:gap-1 xl:gap-2 border-b md:border-b-0 px-2 py-2">
+							<div key={index} className="flex items-center gap-2 md:gap-1 xl:gap-2 border-b md:border-b-0 px-2">
 								<img src={feature?.image} className="w-3 lg:w-4 xl:w-6" />
 								<span className='text-xs lg:text-sm xl:text-base'>{feature.text}</span>
 							</div>

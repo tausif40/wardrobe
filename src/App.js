@@ -30,7 +30,6 @@ function App() {
         <Route path="/fitted-kitchens" element={<FittedKitchens />} />
         <Route path="/sale" element={<Sale />} />
       </Routes>
-
       <Footer />
     </>
   );

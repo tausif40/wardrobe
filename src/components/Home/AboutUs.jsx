@@ -15,7 +15,7 @@ const AboutUs = () => {
 						</div>
 					</div>
 				</div>
-
+		
 				<div class="aboutMain">
 					<div class="circle hidden sm:block sm:left-[3%] md:left-[6%] lg:left-[10%] xl:left-[12%] bg-gray-300">
 						<img src="/assets/img/circleLeft.jpeg" alt="" className="rounded-full" />
