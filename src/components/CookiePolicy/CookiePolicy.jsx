@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { IoClose } from "react-icons/io5";
+import ManageCookies from './ManageCookies';
 
 function CookiePolicy() {
 
 	const [ isVisible, setIsVisible ] = useState(true);
+	const [ manageCookies, setManageCookies ] = useState(false);
 
 	const handleAccept = () => {
 		setIsVisible(false);
@@ -13,15 +15,15 @@ function CookiePolicy() {
 	};
 
 	const handleManageCookies = () => {
-		alert("Redirect to manage cookies settings");
+		setManageCookies(true)
 	};
 
 	if (!isVisible) return null;
 
 	return (
 		<>
-			<div className="fixed top-0 w-full h-screen bg-black/20 z-40 px-4 md:px-2">
-				<div className="relative left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-4xl px-8 py-8 bg-white shadow-md border rounded">
+			<div className="fixed w-full h-screen flex justify-center items-center  bg-black/20 px-4 md:px-2 z-40">
+				<div className={`relative top-0 max-w-4xl px-8 py-8 bg-white shadow-md border rounded ${manageCookies && 'h-screen'} overflow-x-auto cookieScrollbar`}>
 					{/* <div className='absolute right-3 top-2 cursor-pointer'>
 						<IoClose size={20} />
 					</div> */}
@@ -41,21 +43,22 @@ function CookiePolicy() {
 							</Link> */}
 
 						</p>
-						<div className="w-full flex justify-end md:px-4">
-							{/* <button
+						<div className="w-full grid grid-cols-2 justify-end md:px-4 gap-12 font-medium">
+							{!manageCookies && <button
 								onClick={handleManageCookies}
 								className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 min-w-max"
 							>
 								Manage cookies
-							</button> */}
+							</button>}
 							<button
 								onClick={handleAccept}
-								className="w-full md:w-[25%] px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700"
+								className="w-full px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700"
 							>
-								Accept
+								{manageCookies ? 'Accept all cookies' : 'Accept'}
 							</button>
 						</div>
 					</div>
+					{manageCookies && <ManageCookies setIsVisible={setIsVisible} setManageCookies={setManageCookies} />}
 				</div>
 			</div>
 		</>

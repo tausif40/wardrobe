@@ -24,7 +24,7 @@ function App() {
     if (!hasAccepted) {
       const timer = setTimeout(() => {
         setIsVisible(true);
-      }, 5000);
+      }, 1000);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -32,8 +32,8 @@ function App() {
   return (
     <>
       <Toaster position="top-right" reverseOrder={true} />
-      <Header />
       {isVisible && <CookiePolicy />}
+      <Header />
       <Routes>
         <Route path="/" element={<HomePageLayout />} />
         <Route path="/terms-conditions" element={<TermsAndConditions />} />
