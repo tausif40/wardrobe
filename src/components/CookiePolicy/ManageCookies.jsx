@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
+import { IoChevronDownOutline } from "react-icons/io5";
+import { IoChevronUpOutline } from "react-icons/io5";
+
 
 const cookieTypes = [
 	{
@@ -86,8 +89,8 @@ export default function ManageCookies({ setIsVisible, setManageCookies }) {
 	const [ expandedSections, setExpandedSections ] = useState([ 'necessary' ]);
 	const [ preferences, setPreferences ] = useState({
 		necessary: true,
-		performance: false,
-		marketing: false
+		performance: true,
+		marketing: true
 	});
 
 	const toggleSection = (sectionId) => {
@@ -105,6 +108,7 @@ export default function ManageCookies({ setIsVisible, setManageCookies }) {
 			marketing: true
 		});
 	};
+
 
 	const handleSaveChoices = () => {
 		setIsVisible(false)
@@ -131,6 +135,9 @@ export default function ManageCookies({ setIsVisible, setManageCookies }) {
 							className="w-full px-4 py-4 flex justify-between items-center text-left"
 							aria-expanded={expandedSections.includes(type.id)}
 						>
+							<span className="mr-4 transform transition-transform duration-200">
+								{expandedSections.includes(type.id) ? <IoChevronUpOutline /> : <IoChevronDownOutline />}
+							</span>
 							<div className="flex justify-between w-full">
 								<span className="font-medium">{type.title}</span>
 								{type.alwaysActive ? (
@@ -146,23 +153,15 @@ export default function ManageCookies({ setIsVisible, setManageCookies }) {
 										<input
 											type="checkbox"
 											checked={preferences[ type.id ]}
-											onChange={() => { }}
+											onChange={(e) => { }}
 											className="sr-only peer"
 										/>
-										<div
-											className={`w-11 h-6 bg-gray-200 rounded-full peer 
-                      peer-checked:after:translate-x-full peer-checked:after:border-white 
-                      after:content-[''] after:absolute after:top-0.5 after:left-[2px] 
-                      after:bg-white after:border-gray-300 after:border after:rounded-full 
-                      after:h-5 after:w-5 after:transition-all
-                      peer-checked:bg-teal-600`}
+										<div className={`w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white 
+                      after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600`}
 										></div>
 									</div>
 								)}
 							</div>
-							<span className="ml-4 transform transition-transform duration-200">
-								{expandedSections.includes(type.id) ? '−' : '+'}
-							</span>
 						</button>
 						{expandedSections.includes(type.id) && (
 							<div className="px-4 pb-4">

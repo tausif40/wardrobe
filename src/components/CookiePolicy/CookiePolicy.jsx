@@ -23,7 +23,7 @@ function CookiePolicy() {
 	return (
 		<>
 			<div className="fixed w-full h-screen flex justify-center items-center  bg-black/20 px-4 md:px-2 z-40">
-				<div className={`relative top-0 max-w-4xl px-8 py-8 bg-white shadow-md border rounded ${manageCookies && 'h-screen'} overflow-x-auto cookieScrollbar`}>
+				<div className={`relative top-0 max-w-4xl px-8 py-8 bg-white shadow-md border rounded ${manageCookies && 'h-[90vh]'} overflow-x-auto cookieScrollbar`}>
 					{/* <div className='absolute right-3 top-2 cursor-pointer'>
 						<IoClose size={20} />
 					</div> */}
@@ -58,7 +58,9 @@ function CookiePolicy() {
 							</button>
 						</div>
 					</div>
-					{manageCookies && <ManageCookies setIsVisible={setIsVisible} setManageCookies={setManageCookies} />}
+					<div>
+						{manageCookies && <ManageCookies setIsVisible={setIsVisible} setManageCookies={setManageCookies} />}
+					</div>
 				</div>
 			</div>
 		</>
