@@ -77,11 +77,11 @@ const Header = () => {
 					<div className="md:flex items-center gap-8 text-gray-600 hidden md:block">
 						<div className="flex items-center gap-2">
 							<Phone className="h-5 w-5 text-[#78D7E9]" />
-							<a href={`tel:${headerData.contactInfo.phone}`} className="hover:text-[#78D7E9]">{headerData.contactInfo.phone}</a>
+							<a href={`tel:${headerData.contactInfo.phone}`} className="hover:text-heading">{headerData.contactInfo.phone}</a>
 						</div>
 						<div className="flex items-center gap-2">
 							<Mail className="h-5 w-5 text-[#78D7E9]" />
-							<a href={`mailto:${headerData.contactInfo.email}`} className="hover:text-[#78D7E9]">{headerData.contactInfo.email}</a>
+							<a href={`mailto:${headerData.contactInfo.email}`} className="hover:text-heading">{headerData.contactInfo.email}</a>
 						</div>
 					</div>
 
@@ -111,8 +111,8 @@ const Header = () => {
 						<ul className={`flex flex-col md:flex-row md:justify-between md:items-center md:gap-1 ${isMenuOpen && 'pt-4'}`}>
 							{headerData.navigationLinks.map((navLink, index) => (
 								<>
-									<li key={index} className={`text-base md:font-light md:text-[11px] lg:text-sm xl:text-base ${isMenuOpen ? 'block' : 'hidden'} md:block border-t md:border-t-0 px-2 md:px-0 hover:bg-darkSky md:hover:bg-transparent`} onClick={() => setIsMenuOpen((pre) => !pre)}>
-										<Link to={navLink.link} className={`block py-3 hover:text-primary transition-all ${location.pathname == navLink.link && 'text-primary'}`}>{navLink.title}</Link>
+									<li key={index} className={`text-base md:font-light md:text-[11px] lg:text-sm xl:text-base ${isMenuOpen ? 'block' : 'hidden'} md:block border-t md:border-t-0 px-2 md:px-0 hover:bg-darkSky md:hover:bg-transparent`} >
+										<Link to={navLink.link} className={`block py-3 hover:text-primary transition-all ${location.pathname == navLink.link && 'text-[#ebf58c]'}`}>{navLink.title}</Link>
 									</li>
 									<li className='text-[#4ec1d8] hidden md:block '>|</li>
 								</>
@@ -129,8 +129,8 @@ const Header = () => {
 					<div className="md:px-2 lg:px-16 xl:px-20 md:flex items-center justify-between gap-6 text-sm text-gray-600">
 						{headerData.features.map((feature, index) => (
 							<div key={index} className="flex items-center gap-2 md:gap-1 xl:gap-2 border-b md:border-b-0 p-2 md:p-0">
-								<img src={feature?.image} className="w-3 lg:w-4 xl:w-6" />
-								<span className='text-xs lg:text-sm xl:text-base'>{feature.text}</span>
+								<img src={feature?.image} className="w-3 lg:w-3 xl:w-5" />
+								<span className='text-xs lg:text-sm'>{feature.text}</span>
 							</div>
 						))}
 					</div>

@@ -9,7 +9,7 @@ function CTA() {
 			<div className=" grid grid-cols-1 lg:grid-cols-5">
 				{/* Left Section - Contact Info */}
 				<div className="bg-primary px-4 md:px-8 py-6 sm:py-8 md:p-10 flex flex-col md:col-span-2">
-					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold md:font-extrabold text-white mb-8 leading-tight tracking-tight">
+					<h2 className="text-3xl sm:text-4xl md:text-5xl text-white mb-8 font-anton">
 						Have you got any questions.
 					</h2>
 
@@ -55,7 +55,7 @@ function CTA() {
 						backgroundPosition: 'center'
 					}}
 				>
-					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold md:font-extrabold text-white mb-8 leading-tight tracking-tight">
+					<h2 className="text-3xl sm:text-4xl md:text-5xl text-center text-white mb-8 font-anton">
 						FINANCE NOW AVAILABLE
 					</h2>
 
@@ -95,8 +95,8 @@ function CTA() {
 					</div>
 				</div>
 			</div>
-			<div className="mt-12 px-4 sm:px-8 text-text font-light">
-				<p className='tracking-wide	'>
+			<div className="mt-12 px-4 sm:px-8 text-[#3f3e3e] font-normal">
+				<p className='tracking-wide'>
 					Best fitted Wardrobe is registered in England and Wales. Registered no 10897780 Unit A3 SeedBed Center Davidsonway Romford RM7 0AZ. Best fitted Wardrobe acts as a credit broker and offers credit products from Omni Capital Retail Finance. Your application will be subject to a credit check using a recognised credit reference agency as part of our assessment process. *Credit available subject to status, UK residents aged 18 Years and over.
 				</p>
 			</div>
