@@ -9,7 +9,7 @@ const TermsAndConditions = () => {
 			</div>
 
 			<div className="container mx-auto py-12 text-text ">
-				<h1 className="text-5xl font-bold mb-6 text-center text-heading ">Terms and Conditions</h1>
+				<h1 className="text-3xl md:text-5xl font-bold mb-6 text-center text-heading ">Terms and Conditions</h1>
 
 				<section className="mb-8">
 					<h2 className="text-lg font-semibold mb-4 font-poppins">How your 10-year guarantee works</h2>

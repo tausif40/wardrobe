@@ -9,7 +9,7 @@ function PaymentConditions() {
 			</div>
 
 			<div className="container mx-auto py-12 text-text ">
-				<h1 className="text-5xl font-bold mb-6 text-center text-heading ">Payment and Cancellation Terms</h1>
+				<h1 className="text-3xl md:text-5xl font-bold mb-6 text-center text-heading">Payment and Cancellation Terms</h1>
 
 				<div className="space-y-8">
 					<section>
