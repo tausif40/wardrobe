@@ -24,10 +24,14 @@ export default function FittedKitchens() {
 			"We manufacture the kitchens for your own specific needs and requirements.",
 		],
 	};
+
+	const sampleData = {
+		heading: "Samples of all our fitted kitchen"
+	}
 	return (
 		<>
 			<Banner data={data} />
-			<Samples />
+			<Samples data={sampleData} />
 			<div className='my-20'>
 				<CTA />
 			</div>

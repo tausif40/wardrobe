@@ -22,10 +22,15 @@ function Wardrobes() {
 			"The result will be a beautifully designed and crafted bedroom with more storage space than you could ever imagine. At Best Fitted Wardrobe we can give you the perfect space you never knew you had.",
 		],
 	};
+
+	const sampleData = {
+		heading: "Samples of all our Built in wardrobes"
+	}
+
 	return (
 		<>
 			<Banner data={data} />
-			<Samples />
+			<Samples data={sampleData} />
 			<div className='my-20'>
 				<CTA />
 			</div>

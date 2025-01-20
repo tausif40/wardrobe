@@ -50,7 +50,7 @@ const images = [
 	},
 ];
 
-export default function Samples() {
+export default function Samples({ data }) {
 
 	const [ currentIndex, setCurrentIndex ] = useState(0);
 
@@ -61,13 +61,14 @@ export default function Samples() {
 	const handlePrevious = () => {
 		setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
 	};
+	console.log("data", data);
 
 	return (
 		<div className="container mx-auto px-4 py-8">
 			<div className="grid lg:grid-cols-2 gap-12">
 				{/* Colors & Finishes Section */}
 				<section>
-					<h2 className="text-2xl mb-6 text-gray-800 ">
+					<h2 className="text-2xl mb-6 text-gray-800 font-medium">
 						OUR WIDE VARIETY OF COLOURS & FINISHES...
 					</h2>
 					<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 bg-gray-100 px-3 py-4">
@@ -86,8 +87,8 @@ export default function Samples() {
 
 				{/* Kitchen Samples Section */}
 				<section>
-					<h2 className="text-2xl mb-6 text-gray-800">
-						SAMPLES OF ALL OUR FITTED KITCHEN
+					<h2 className="text-2xl mb-6 text-gray-800 h-8 uppercase font-medium">
+						{data?.heading}
 					</h2>
 					<div className='bg-gray-100 border-4 border-white shadow'>
 						<PhotoProvider maskOpacity={0.8}>

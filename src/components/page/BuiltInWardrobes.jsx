@@ -21,10 +21,15 @@ export default function BuiltInWardrobes() {
 			"For kids we have special designs to keep there clothes and toys."
 		],
 	};
+
+	const sampleData = {
+		heading: "Samples of all our Built in wardrobes"
+	}
+
 	return (
 		<>
 			<Banner data={data} />
-			<Samples />
+			<Samples data={sampleData} />
 			<div className='my-20'>
 				<CTA />
 			</div>

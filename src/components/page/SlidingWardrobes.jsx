@@ -21,10 +21,15 @@ export default function SlidingWardrobes() {
 			"Stunning sliding wardrobes and beautifully co-ordinated cabinetry will help create a peaceful haven for you to relax in or maybe you are looking for the practicality of the perfect storage solution, whatever you are looking to achieve – our designers will help you. They will show you exactly how your new fitted Wardrobe will look.",
 		],
 	};
+
+	const sampleData = {
+		heading: "Samples of all our sliding wardrobes"
+	}
+
 	return (
 		<>
 			<Banner data={data} />
-			<Samples />
+			<Samples data={sampleData} />
 			<div className='my-20'>
 				<CTA />
 			</div>
