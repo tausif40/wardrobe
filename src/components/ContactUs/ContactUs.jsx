@@ -1,4 +1,3 @@
-import { Mail, MapPin, Phone } from 'lucide-react'
 import CTA from '../page/CTA';
 
 const ContactUs = () => {
@@ -43,10 +42,10 @@ const ContactUs = () => {
 					<div className="relative z-10 px-4 py-12 text-center text-white">
 						<h2 className="text-4xl font-bold mb-8">Get in touch</h2>
 						<form className="max-w-md mx-auto space-y-4 flex flex-col">
-							<input type="text" placeholder="Name" className="bg-white px-4 py-2" />
-							<input type="email" placeholder="Email" className="bg-white px-4 py-2" />
-							<input type="tel" placeholder="Phone" className="bg-white px-4 py-2" />
-							<textarea placeholder="Message" className="bg-white px-4 py-2" rows={4} />
+							<input type="text" placeholder="Name" className="bg-white px-4 py-2 focus:outline-mySky" />
+							<input type="email" placeholder="Email" className="bg-white px-4 py-2 focus:outline-mySky" />
+							<input type="tel" placeholder="Phone" className="bg-white px-4 py-2 focus:outline-mySky" />
+							<textarea placeholder="Message" className="bg-white px-4 py-2 focus:outline-mySky" rows={4} />
 							<button type="submit" className="w-full bg-primary text-[#2A9D8F] hover:bg-primaryDark	 px-4 py-2 transition-all font-semibold">
 								Send Message
 							</button>

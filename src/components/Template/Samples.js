@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const colorSamples = [
 	{ id: '312', name: 'Super Matt White', type: 'bg-white border' },
@@ -25,16 +27,40 @@ const kitchenSamples = [
 	// Add more kitchen samples as needed
 ]
 
+const images = [
+	{
+		src: "/assets/img/tempCrousel/img1.jpg",
+		thumbnail: "/assets/img/tempCrousel/img1.jpg",
+	},
+	{
+		src: "/assets/img/tempCrousel/img2.jpg",
+		thumbnail: "/assets/img/tempCrousel/img2.jpg",
+	},
+	{
+		src: "/assets/img/tempCrousel/img3.jpg",
+		thumbnail: "/assets/img/tempCrousel/img3.jpg",
+	},
+	{
+		src: "/assets/img/tempCrousel/img4.jpg",
+		thumbnail: "/assets/img/tempCrousel/img4.jpg",
+	},
+	{
+		src: "/assets/img/tempCrousel/img5.jpg",
+		thumbnail: "/assets/img/tempCrousel/img5.jpg",
+	},
+];
+
 export default function Samples() {
-	const [ currentSlide, setCurrentSlide ] = useState(0)
 
-	const nextSlide = () => {
-		setCurrentSlide((prev) => (prev + 1) % kitchenSamples.length)
-	}
+	const [ currentIndex, setCurrentIndex ] = useState(0);
 
-	const prevSlide = () => {
-		setCurrentSlide((prev) => (prev - 1 + kitchenSamples.length) % kitchenSamples.length)
-	}
+	const handleNext = () => {
+		setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+	};
+
+	const handlePrevious = () => {
+		setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+	};
 
 	return (
 		<div className="container mx-auto px-4 py-8">
@@ -63,32 +89,64 @@ export default function Samples() {
 					<h2 className="text-2xl mb-6 text-gray-800">
 						SAMPLES OF ALL OUR FITTED KITCHEN
 					</h2>
-					<div className="relative">
-						<div className="shadow overflow-hidden border-[6px] border-white">
-							<img
-								src={kitchenSamples[ currentSlide ].url}
-								alt={kitchenSamples[ currentSlide ].alt}
-								width={800}
-								height={600}
-								className="w-full object-cover"
-							/>
-						</div>
+					<div className='bg-gray-100 border-4 border-white shadow'>
+						<PhotoProvider maskOpacity={0.8}>
+							<div className="relative">
+								{/* Main Preview Image */}
+								<PhotoView src={images[ currentIndex ].src}>
+									<div className='w-full h-96 bg-gray-200 overflow-hidden flex justify-center items-center'>
+										<img
+											src={images[ currentIndex ].thumbnail}
+											alt=""
+											style={{
+												cursor: 'pointer',
+												display: 'block',
+												objectFit: 'cover',
+												width: 'full',
+												height: 'auto'
+											}}
+										/>
+									</div>
+								</PhotoView>
 
-						{/* Navigation Buttons */}
-						<button
-							onClick={prevSlide}
-							className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-lg hover:bg-white transition-colors"
-							aria-label="Previous slide"
-						>
-							<ChevronLeft className="w-6 h-6 text-gray-800" />
-						</button>
-						<button
-							onClick={nextSlide}
-							className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-lg hover:bg-white transition-colors"
-							aria-label="Next slide"
-						>
-							<ChevronRight className="w-6 h-6 text-gray-800" />
-						</button>
+								{/* next prev button */}
+								<button
+									onClick={handlePrevious}
+									className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-lg hover:bg-white transition-colors"
+									aria-label="Previous slide"
+								>
+									<ChevronLeft className="w-6 h-6 text-gray-800" />
+								</button>
+								<button
+									onClick={handleNext}
+									className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-lg hover:bg-white transition-colors"
+									aria-label="Next slide"
+								>
+									<ChevronRight className="w-6 h-6 text-gray-800" />
+								</button>
+							</div>
+
+							{/* Thumbnail Images */}
+							<div className="customHorizontalScroll overflow-x-auto mt-4 pb-1" style={{ display: 'flex', gap: '8px' }}>
+								{images.map((image, index) => (
+									<PhotoView key={index} src={image.src}>
+										<img
+											src={image.thumbnail}
+											alt=""
+											style={{
+												cursor: 'pointer',
+												width: '60px',
+												height: '60px',
+												objectFit: 'cover',
+												border: currentIndex === index ? '2px solid #007BFF' : 'none',
+											}}
+											onClick={() => setCurrentIndex(index)}
+										/>
+									</PhotoView>
+								))}
+							</div>
+						</PhotoProvider>
+
 					</div>
 				</section>
 			</div>

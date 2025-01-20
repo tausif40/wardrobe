@@ -1,20 +1,24 @@
 import React from 'react'
 import { Maximize2, Home, CookingPotIcon as Kitchen } from 'lucide-react'
+import { Link } from 'react-router-dom';
 
 const data = [
 	{
+		url: '/sliding-wardrobes',
 		icon: '/assets/img/icon1.png',
 		img: '/assets/img/bed2.jpeg',
 		title: "SLIDING WARDROBES",
 		description: "You are Concern about your space save option & sliding wardrobe We have a fabulous range of style to choose.",
 	},
 	{
+		url: '/built-in-wardrobes',
 		icon: '/assets/img/icon2.png',
 		img: '/assets/img/bed.jpeg',
 		title: "BUILT IN WARDROBE",
 		description: "Inside your built in wardrobes and fitted wardrobes there is ample room to house all of your belongings.",
 	},
 	{
+		url: '/fitted-kitchens',
 		icon: '/assets/img/icon3.png',
 		img: '/assets/img/kitchen.jpeg',
 		title: "FITTED KITCHENS",
@@ -36,9 +40,11 @@ const MyComponent = () => {
 							</div>
 							<h3 className="text-xl lg:text-2xl font-bold mb-3 text-heading">{item.title}</h3>
 							<p className="text-gray-600 md:text-sm lg:text-base mb-4 px-4">{item.description}</p>
-							<button className="text-mySky border border-mySky px-6 py-2 rounded-full hover:bg-mySky hover:text-white transition-all">
-								READ MORE
-							</button>
+							<Link to={item?.url}>
+								<button className="text-mySky border border-mySky px-6 py-2 rounded-full hover:bg-mySky hover:text-white transition-all">
+									READ MORE
+								</button>
+							</Link>
 						</div>
 					))}
 				</div>

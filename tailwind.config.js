@@ -16,6 +16,8 @@ module.exports = {
       },
       fontFamily: {
         anton: [ 'Anton', 'sans-serif' ],
+        poppins: [ 'Poppins', 'sans-serif' ],
+        quicksand: [ 'Quicksand', 'sans-serif' ],
       }
     },
   },

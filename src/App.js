@@ -15,8 +15,11 @@ import Sale from './components/page/Sale';
 import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
 import CookiePolicy from './components/CookiePolicy/CookiePolicy';
+import { useLocation } from 'react-router-dom'
+import PaymentConditions from './components/TermsAndConditions/PaymentConditions';
 
 function App() {
+  const pathName = useLocation();
   const [ isVisible, setIsVisible ] = useState(false);
 
   useEffect(() => {
@@ -29,6 +32,11 @@ function App() {
     }
   }, []);
 
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [ pathName ])
+
   return (
     <>
       <Toaster position="top-right" reverseOrder={true} />
@@ -36,7 +44,6 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePageLayout />} />
-        <Route path="/terms-conditions" element={<TermsAndConditions />} />
         <Route path="/wardrobes" element={<Wardrobes />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
@@ -44,6 +51,8 @@ function App() {
         <Route path="/built-in-wardrobes" element={<BuiltInWardrobes />} />
         <Route path="/fitted-kitchens" element={<FittedKitchens />} />
         <Route path="/sale" element={<Sale />} />
+        <Route path="/terms-conditions" element={<TermsAndConditions />} />
+        <Route path="/payment-terms-and-conditions" element={<PaymentConditions />} />
       </Routes>
       <Footer />
     </>

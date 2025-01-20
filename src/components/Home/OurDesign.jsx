@@ -1,26 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function OurDesign() {
 	const [ images, setImages ] = useState([]);
-
-	useEffect(() => {
-		const imageFolderPath = '/assets/img/ourDesign/img';
-		const maxImages = 9;
-
-		const tempImages = [];
-		for (let i = 1; i <= maxImages; i++) {
-			const imgPath = `${imageFolderPath}${i}.jpeg`;
-
-			fetch(imgPath, { method: 'HEAD' })
-				.then((response) => {
-					if (response.ok) {
-						setImages([ ...tempImages ]);
-						tempImages.push(imgPath);
-					}
-				})
-				.catch((err) => console.error('Image not found:', imgPath));
-		}
-	}, []);
 
 	useEffect(() => {
 		const loadImages = async () => {
@@ -64,9 +46,11 @@ function OurDesign() {
 						))}
 					</div>
 					<div className="text-center mt-6">
-						<button className="text-white border bg-mySky px-6 py-2 rounded-full hover:bg-darkSky hover:text-white transition-all">
-							VIEW GALLERY
-						</button>
+						<Link to='/gallery'>
+							<button className="text-white border bg-mySky px-6 py-2 rounded-full hover:bg-darkSky hover:text-white transition-all">
+								VIEW GALLERY
+							</button>
+						</Link>
 					</div>
 				</div>
 			</section>

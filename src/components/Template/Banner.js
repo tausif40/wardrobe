@@ -23,7 +23,7 @@ function Banner({ data }) {
 				<div className="flex flex-col gap-20">
 					<div>
 						{/* Image Section */}
-						<div className="w-full md:w-auto md:float-left md:pr-5 ld:pr-10 mb-8 md:pb-3 lg:pb-6 bg-gray-300">
+						<div className="w-full md:w-auto md:float-left md:pr-5 lg:pr-10 mb-8 md:pb-3 lg:pb-5">
 							<img
 								src={data.image.src}
 								width={data.image.width}
