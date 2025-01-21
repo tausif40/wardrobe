@@ -5,7 +5,7 @@ import axios from 'axios';
 import apiClient from '../../lib/apiClient';
 import { useNavigate, useParams } from 'react-router-dom';
 import CTA from '../page/CTA';
-import { IoIosArrowRoundBack } from "react-icons/io";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 
 const CategoryImages = () => {
@@ -51,7 +51,7 @@ const CategoryImages = () => {
 				<button className='flex items-center text-mySky border border-mySky px-6 py-[6px] rounded-full hover:bg-mySky hover:text-white transition-all mb-8'
 					onClick={handleBack}
 				>
-					<IoIosArrowRoundBack /> <span>&nbsp;&nbsp;Back</span>
+					<IoMdArrowRoundBack /> <span>&nbsp;&nbsp;Back</span>
 				</button>
 
 				{!loading && images.length == 0 &&
@@ -84,7 +84,7 @@ const CategoryImages = () => {
 				<button className='m-auto flex items-center text-mySky border border-mySky px-6 py-[6px] rounded-full hover:bg-mySky hover:text-white transition-all mt-8'
 					onClick={handleBack}
 				>
-					<IoIosArrowRoundBack /> <span>&nbsp;&nbsp;Back</span>
+					<IoMdArrowRoundBack /> <span>&nbsp;&nbsp;Back</span>
 				</button>
 			</div>
 			<div className='mb-16 mt-10'>

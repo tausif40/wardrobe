@@ -7,7 +7,7 @@ import { MdDelete } from "react-icons/md";
 import Modal from "../../Modal/Modal";
 import apiClient from "../../../lib/apiClient";
 import { useNavigate } from "react-router-dom";
-import { IoIosArrowRoundBack } from "react-icons/io";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 const AddCategory = () => {
 	const navigate = useNavigate();
@@ -139,7 +139,7 @@ const AddCategory = () => {
 				<button className='flex items-center text-mySky border border-mySky px-6 py-[6px] rounded-full hover:bg-mySky hover:text-white transition-all'
 					onClick={handleBack}
 				>
-					<IoIosArrowRoundBack /> <span>&nbsp;&nbsp;Back</span>
+					<IoMdArrowRoundBack /> <span>&nbsp;&nbsp;Back</span>
 				</button>
 
 				<h1 className="text-3xl font-bold text-center text-blue-600 mb-6">
