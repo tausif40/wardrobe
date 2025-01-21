@@ -14,7 +14,7 @@ function AdminNav() {
 			{/* Top Bar */}
 			<div className="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
 				{/* Logo */}
-				<Link to={'/admin'} className="flex-shrink-0">
+				<Link to={'/admin/dashboard'} className="flex-shrink-0">
 					<div className="flex items-center">
 						<img src="/assets/img/logos/logo.png" alt="Best Fitted Wardrobe" className="w-44 lg:w-52" />
 					</div>

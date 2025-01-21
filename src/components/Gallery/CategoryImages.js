@@ -6,7 +6,7 @@ import apiClient from '../../lib/apiClient';
 import { useNavigate, useParams } from 'react-router-dom';
 import CTA from '../page/CTA';
 import { IoMdArrowRoundBack } from "react-icons/io";
-
+import '../../css/gallery.css'
 
 const CategoryImages = () => {
 	const navigate = useNavigate();

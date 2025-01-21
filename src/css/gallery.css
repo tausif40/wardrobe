@@ -1,0 +1,5 @@
+.PhotoView__Photo {
+	padding: 70px !important;
+	transition: all;
+	/* border: 5px solid white; */
+}
