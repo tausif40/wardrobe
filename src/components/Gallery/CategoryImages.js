@@ -61,20 +61,33 @@ const CategoryImages = () => {
 				}
 
 				<PhotoProvider maskOpacity={0.8}>
-					<div className='grid grid-cols-3 gap-6'>
+					<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap:8 lg:gap-x-10 px-6 sm:px-10 lg:px-20'>
 						{images?.map(image => (
-							<PhotoView key={image._id} src={`${BASE_URL}/${image.path}`}>
+							<div className='relative'>
+								<PhotoView key={image._id} src={`${BASE_URL}/${image.path}`}>
+									<img
+										src={`${BASE_URL}/${image.path}`}
+										alt={image.filename}
+										className='bg-white shadow overflow-hidden p-1 object-cover cursor-pointer h-80 w-full border'
+									/>
+
+								</PhotoView>
 								<img
-									src={`${BASE_URL}/${image.path}`}
-									alt={image.filename}
-									className='bg-white shadow overflow-hidden p-1 object-cover cursor-pointer h-96 w-full border'
+									src='/assets/img/logos/logo.png'
+									className="absolute right-4 bottom-5 w-24 object-cover z-50"
 								/>
-							</PhotoView>
+							</div>
 						))}
 					</div>
 				</PhotoProvider >
+
+				<button className='m-auto flex items-center text-mySky border border-mySky px-6 py-[6px] rounded-full hover:bg-mySky hover:text-white transition-all mt-8'
+					onClick={handleBack}
+				>
+					<IoIosArrowRoundBack /> <span>&nbsp;&nbsp;Back</span>
+				</button>
 			</div>
-			<div className='my-16'>
+			<div className='mb-16 mt-10'>
 				<CTA />
 			</div>
 		</>
