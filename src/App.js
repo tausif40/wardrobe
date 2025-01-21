@@ -1,6 +1,6 @@
 import { Toaster } from 'react-hot-toast';
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import HomePageLayout from './components/layout/HomePageLayout';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -15,11 +15,18 @@ import Sale from './components/page/Sale';
 import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
 import CookiePolicy from './components/CookiePolicy/CookiePolicy';
-import { useLocation } from 'react-router-dom'
 import PaymentConditions from './components/TermsAndConditions/PaymentConditions';
+// admin
+import AdminLogin from './components/Admin/Login/AdminLogin';
+import AdminNav from './components/Header/AdminNav';
+import Dashboard from './components/Admin/Dashboard/Dashboard';
+import AddCategory from './components/Admin/AddCatigory/AddCategory';
+import UploadImages from './components/Admin/UploadImages/UploadImages';
+import Gallery from './components/Gallery/Gallery';
+import CategoryImages from './components/Gallery/CategoryImages';
 
 function App() {
-  const pathName = useLocation();
+  const location = useLocation();
   const [ isVisible, setIsVisible ] = useState(false);
 
   useEffect(() => {
@@ -32,16 +39,20 @@ function App() {
     }
   }, []);
 
-
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [ pathName ])
+    window.scrollTo(0, 0);
+  }, [ location ]);
+
+  // Check if the current path starts with "/admin"
+  const isAdminPath = location.pathname.startsWith('/admin');
 
   return (
     <>
       <Toaster position="top-right" reverseOrder={true} />
       {isVisible && <CookiePolicy />}
-      <Header />
+
+      {/* Show Header and Footer only if not on admin paths */}
+      {!isAdminPath && <Header />}
       <Routes>
         <Route path="/" element={<HomePageLayout />} />
         <Route path="/wardrobes" element={<Wardrobes />} />
@@ -51,10 +62,18 @@ function App() {
         <Route path="/built-in-wardrobes" element={<BuiltInWardrobes />} />
         <Route path="/fitted-kitchens" element={<FittedKitchens />} />
         <Route path="/sale" element={<Sale />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/images/:id" element={<CategoryImages />} />
         <Route path="/terms-conditions" element={<TermsAndConditions />} />
         <Route path="/payment-terms-and-conditions" element={<PaymentConditions />} />
+
+        {/* admin */}
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<Dashboard />} />
+        <Route path="/admin/add-category" element={<AddCategory />} />
+        <Route path="/admin/upload-images" element={<UploadImages />} />
       </Routes>
-      <Footer />
+      {!isAdminPath && <Footer />}
     </>
   );
 }

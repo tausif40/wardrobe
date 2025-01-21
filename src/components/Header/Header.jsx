@@ -4,17 +4,11 @@ import { Mail, Phone, Search, Menu } from 'lucide-react';
 import { GrGooglePlus } from "react-icons/gr";
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
-import { IoLogoTwitter } from "react-icons/io";
-import { PiLineVerticalLight } from "react-icons/pi";
-import MobileHeader from './MobileHeader';
-import DeviceChecker from '../../utils/DeviceChecker';
 import { FaXTwitter } from "react-icons/fa6";
 
 
 const Header = () => {
 	let location = useLocation();
-	const deviceType = DeviceChecker();
-	const width = window.innerWidth;
 
 	const [ isSearchOpen, setIsSearchOpen ] = useState(false);
 	const [ isMenuOpen, setIsMenuOpen ] = useState(false);
@@ -52,17 +46,16 @@ const Header = () => {
 			{ title: "CONTACT US", link: "/contact" }
 		],
 		features: [
-			{ image: "./assets/img/icons/england.png", text: "Made in UK" },
-			{ image: "./assets/img/icons/bage.png", text: "10 Year Product Guarantee" },
-			{ image: "./assets/img/icons/asset5.png", text: "Soft Close Doors As Standard" },
-			{ image: "./assets/img/icons/hanger.png", text: "We fit wardrobes in less than 2-3 weeks" }
+			{ image: "/assets/img/icons/england.png", text: "Made in UK" },
+			{ image: "/assets/img/icons/bage.png", text: "10 Year Product Guarantee" },
+			{ image: "/assets/img/icons/asset5.png", text: "Soft Close Doors As Standard" },
+			{ image: "/assets/img/icons/hanger.png", text: "We fit wardrobes in less than 2-3 weeks" }
 		]
 	};
 
 	return (
 		<>
-			{/* {deviceType === 'Mobile'
-				? <MobileHeader /> : */}
+
 			<header className="w-full bg-white">
 				{/* Top Bar */}
 				<div className="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
