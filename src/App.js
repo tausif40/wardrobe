@@ -34,7 +34,7 @@ function App() {
     if (!hasAccepted) {
       const timer = setTimeout(() => {
         setIsVisible(true);
-      }, 1000);
+      }, 2000);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -49,7 +49,7 @@ function App() {
   return (
     <>
       <Toaster position="top-right" reverseOrder={true} />
-      {isVisible && <CookiePolicy />}
+      {!isAdminPath && isVisible && <CookiePolicy />}
 
       {/* Show Header and Footer only if not on admin paths */}
       {!isAdminPath && <Header />}

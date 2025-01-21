@@ -17,7 +17,6 @@ const CategoryImages = () => {
 	// console.log(params);
 	const BASE_URL = process.env.REACT_APP_API_URL;
 	useEffect(() => {
-		// Fetch images from API
 		setLoading(true)
 		apiClient.get(`image?categoryId=${params?.id}`)
 			.then(response => {
@@ -68,7 +67,7 @@ const CategoryImages = () => {
 								<img
 									src={`${BASE_URL}/${image.path}`}
 									alt={image.filename}
-									className='bg-white shadow overflow-hidden p-1 object-cover cursor-pointer h-96 border'
+									className='bg-white shadow overflow-hidden p-1 object-cover cursor-pointer h-96 w-full border'
 								/>
 							</PhotoView>
 						))}

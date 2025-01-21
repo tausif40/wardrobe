@@ -3,10 +3,12 @@ import axios from 'axios';
 import AdminNav from '../../Header/AdminNav'
 import apiClient from '../../../lib/apiClient';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 const UploadImages = () => {
+	const navigate = useNavigate();
 	const [ categories, setCategory ] = useState();
-
 	const [ selectedCategory, setSelectedCategory ] = useState(null);
 	const [ images, setImages ] = useState([]);
 	const [ uploading, setUploading ] = useState(false);
@@ -73,11 +75,21 @@ const UploadImages = () => {
 		}
 	};
 
+	const handleBack = () => {
+		navigate(-1);
+	};
+
 	return (
 		<>
 			<AdminNav />
 
 			<div className='container py-6'>
+
+				<button className='flex items-center text-mySky border border-mySky px-6 py-[6px] rounded-full hover:bg-mySky hover:text-white transition-all'
+					onClick={handleBack}
+				>
+					<IoIosArrowRoundBack /> <span>&nbsp;&nbsp;Back</span>
+				</button>
 
 				<h1 className="text-3xl font-bold text-center text-blue-600 mb-8">
 					Upload Images
