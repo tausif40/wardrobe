@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AdminNav from '../../Header/AdminNav'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Dashboard() {
+	const navigate = useNavigate()
+	const token = sessionStorage.getItem('token');
+	const sessionStartTime = sessionStorage.getItem('sessionStartTime');
+
+	useEffect(() => {
+		if (token == null && sessionStartTime == null) {
+			navigate('/admin')
+			return;
+		}
+	}, [])
+
 	return (
 		<>
 			<AdminNav />

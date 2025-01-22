@@ -26,6 +26,15 @@ const AddCategory = () => {
 
 	const BASE_URL = process.env.REACT_APP_API_URL;
 	const token = sessionStorage.getItem('token');
+	const sessionStartTime = sessionStorage.getItem('sessionStartTime');
+
+	useEffect(() => {
+		if (token == null && sessionStartTime == null) {
+			navigate('/admin')
+			return;
+		}
+	}, [])
+
 
 	const fetchCategories = async () => {
 		try {

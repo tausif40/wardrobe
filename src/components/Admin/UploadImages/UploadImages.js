@@ -15,12 +15,20 @@ const UploadImages = () => {
 
 	const BASE_URL = process.env.REACT_APP_API_URL;
 	const token = sessionStorage.getItem('token');
+	const sessionStartTime = sessionStorage.getItem('sessionStartTime');
+
+	useEffect(() => {
+		if (token == null && sessionStartTime == null) {
+			navigate('/admin')
+			return;
+		}
+	}, [])
 
 	useEffect(() => {
 		const fetchCategory = async () => {
 			const response = await apiClient.get('/category')
 			setCategory(response?.data?.data)
-			console.log(response?.data?.data)
+			// console.log(response?.data?.data)
 		}
 		fetchCategory();
 	}, [])

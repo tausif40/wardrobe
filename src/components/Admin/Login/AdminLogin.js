@@ -12,10 +12,9 @@ const AdminLogin = () => {
 	const [ loading, setLoading ] = useState(false);
 	const [ error, setError ] = useState('');
 
-	const SESSION_TIMEOUT = 5 * 60 * 10000;
+	const SESSION_TIMEOUT = 0.1 * 60 * 10000;
 
 	const BASE_URL = process.env.REACT_APP_API_URL;
-
 	useEffect(() => {
 		const sessionStartTime = sessionStorage.getItem('sessionStartTime');
 		const currentTime = Date.now();
@@ -103,7 +102,7 @@ const AdminLogin = () => {
 						</div>
 					</div>
 					<div className='h-4'>
-						{error && <p className="text-red-500 text-xs font-light mb-4">{error}</p>}
+						{error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 					</div>
 					<div className='mt-6'>
 						<button

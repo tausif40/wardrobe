@@ -3,13 +3,15 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import axios from 'axios';
 import apiClient from '../../lib/apiClient';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import CTA from '../page/CTA';
 import { IoMdArrowRoundBack } from "react-icons/io";
 import '../../css/gallery.css'
 
 const CategoryImages = () => {
 	const navigate = useNavigate();
+	const location = useLocation();
+	const name = location.state?.name;
 
 	const [ images, setImages ] = useState([]);
 	const [ loading, setLoading ] = useState(false);
@@ -20,7 +22,7 @@ const CategoryImages = () => {
 		setLoading(true)
 		apiClient.get(`image?categoryId=${params?.id}`)
 			.then(response => {
-				console.log(response?.data?.data);
+				// console.log(response?.data?.data);
 				setLoading(false)
 				if (response?.data?.data) {
 					setImages(response?.data?.data);
@@ -45,7 +47,7 @@ const CategoryImages = () => {
 
 			<div className='container mx-auto  md:mt-8 px-4 py-8'>
 				<p className=" text-4xl md:text-4xl font-semibold text-center text-blue-900 mb-6 md:mb-12 uppercase">
-					Sliding Wardrobes -Shaker wardrobes
+					{name}
 				</p>
 
 				<button className='flex items-center text-mySky border border-mySky px-6 py-[6px] rounded-full hover:bg-mySky hover:text-white transition-all mb-8'

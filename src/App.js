@@ -1,6 +1,6 @@
 import { Toaster } from 'react-hot-toast';
 import './App.css';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import HomePageLayout from './components/layout/HomePageLayout';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -18,7 +18,6 @@ import CookiePolicy from './components/CookiePolicy/CookiePolicy';
 import PaymentConditions from './components/TermsAndConditions/PaymentConditions';
 // admin
 import AdminLogin from './components/Admin/Login/AdminLogin';
-import AdminNav from './components/Header/AdminNav';
 import Dashboard from './components/Admin/Dashboard/Dashboard';
 import AddCategory from './components/Admin/AddCatigory/AddCategory';
 import UploadImages from './components/Admin/UploadImages/UploadImages';
@@ -26,8 +25,21 @@ import Gallery from './components/Gallery/Gallery';
 import CategoryImages from './components/Gallery/CategoryImages';
 
 function App() {
+  const navigate = useNavigate();
   const location = useLocation();
   const [ isVisible, setIsVisible ] = useState(false);
+
+  const SESSION_TIMEOUT = 3 * 60 * 10000;
+  useEffect(() => {
+    const sessionStartTime = sessionStorage.getItem('sessionStartTime');
+    const currentTime = Date.now();
+    if (sessionStartTime && currentTime - sessionStartTime > SESSION_TIMEOUT) {
+      sessionStorage.removeItem('token');
+      sessionStorage.removeItem('sessionStartTime');
+      navigate('/admin');
+    }
+  }, [ navigate ]);
+
 
   useEffect(() => {
     const hasAccepted = Cookies.get("cookiesAccepted");
