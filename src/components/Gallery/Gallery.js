@@ -15,7 +15,7 @@ const Gallery = () => {
 		const fetchCategory = async () => {
 			const response = await apiClient.get('/category')
 			setCategory(response?.data?.data)
-			// console.log(response?.data?.data)
+			console.log(response?.data?.data)
 		}
 		fetchCategory();
 	}, [])
@@ -44,7 +44,7 @@ const Gallery = () => {
 								className="bg-white shadow overflow-hidden p-1 text-heading hover:bg-mySky hover:text-white transition-all"
 							>
 								<img
-									src={item.image == undefined ? '/assets/img/no_image_found.jpg' : `${BASE_URL}${item.image}`}
+									src={item.image == undefined ? '/assets/img/no_image_found.jpg' : `${item.image}`}
 									alt={item.name}
 									className={`w-full h-72 object-cover bg-gray-200 ${item.image == undefined && 'border-b'}`}
 								/>

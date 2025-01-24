@@ -184,7 +184,7 @@ const AddCategory = () => {
 							{categories.length > 0 && categories?.map((category) => (
 								<div key={category.id} className="relative bg-white shadow p-1 hover:bg-[#4dd0e1] transition-all text-gray-800 hover:text-white">
 									<img
-										src={category.image == undefined ? '/assets/img/no_image_found.jpg' : `${BASE_URL}${category.image}`}
+										src={category.image == undefined ? '/assets/img/no_image_found.jpg' : `${category.image}`}
 										alt={category.name}
 										className={`w-full h-72 object-cover mb-4 rounded bg-gray-200 ${category.image == undefined && 'border-b '}`} />
 									<h3 className="text-lg font-semibold mb-2 px-1">{category.name}</h3>

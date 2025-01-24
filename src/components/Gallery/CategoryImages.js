@@ -22,7 +22,7 @@ const CategoryImages = () => {
 		setLoading(true)
 		apiClient.get(`image?categoryId=${params?.id}`)
 			.then(response => {
-				// console.log(response?.data?.data);
+				console.log(response?.data?.data);
 				setLoading(false)
 				if (response?.data?.data) {
 					setImages(response?.data?.data);
@@ -66,9 +66,9 @@ const CategoryImages = () => {
 					<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap:8 lg:gap-x-10 px-6 sm:px-10 lg:px-20'>
 						{images?.map(image => (
 							<div className='relative'>
-								<PhotoView key={image._id} src={`${BASE_URL}/${image.path}`}>
+								<PhotoView key={image._id} src={image.image}>
 									<img
-										src={`${BASE_URL}/${image.path}`}
+										src={image.image}
 										alt={image.filename}
 										className='bg-white shadow overflow-hidden p-1 object-cover cursor-pointer h-80 w-full border'
 									/>
