@@ -12,7 +12,7 @@ const AdminLogin = () => {
 	const [ loading, setLoading ] = useState(false);
 	const [ error, setError ] = useState('');
 
-	const SESSION_TIMEOUT = 0.1 * 60 * 10000;
+	const SESSION_TIMEOUT = 24 * 60 * 10000;
 
 	const BASE_URL = process.env.REACT_APP_API_URL;
 	useEffect(() => {

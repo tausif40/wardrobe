@@ -5,6 +5,10 @@ import apiClient from '../../../lib/apiClient';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { IoMdArrowRoundBack } from "react-icons/io";
+import CategoryImages from './CategoryImages';
+import Gallery from './Gallery';
+import { IoIosWarning } from "react-icons/io";
+
 
 const UploadImages = () => {
 	const navigate = useNavigate();
@@ -12,6 +16,7 @@ const UploadImages = () => {
 	const [ selectedCategory, setSelectedCategory ] = useState(null);
 	const [ images, setImages ] = useState([]);
 	const [ uploading, setUploading ] = useState(false);
+	const [ categoryName, setCategoryName ] = useState('');
 
 	const BASE_URL = process.env.REACT_APP_API_URL;
 	const token = sessionStorage.getItem('token');
@@ -33,9 +38,10 @@ const UploadImages = () => {
 		fetchCategory();
 	}, [])
 
-	const handleCategoryChange = (e) => {
-		console.log('id - ', e.target.value);
-		setSelectedCategory(e.target.value);
+	const handleCategoryChange = (value) => {
+		// console.log(value);
+		setSelectedCategory(value._id);
+		setCategoryName(value.name);
 	};
 
 	const handleImageChange = (e) => {
@@ -44,7 +50,7 @@ const UploadImages = () => {
 
 	const handleUpload = async () => {
 		if (!selectedCategory) {
-			alert('Please select a category first.');
+			toast('Please select a category first!', { icon: <IoIosWarning color='red' /> });
 			return;
 		}
 
@@ -60,12 +66,8 @@ const UploadImages = () => {
 			formData.append(`images`, image);
 		});
 
+		const loadingToast = toast.loading('Uploading.....');
 		try {
-
-			for (let [ key, value ] of formData.entries()) {
-				console.log(`${key}:`, value);
-			}
-
 			setUploading(true);
 			const response = await axios.post(`${BASE_URL}/upload-image`, formData, {
 				headers: {
@@ -74,10 +76,12 @@ const UploadImages = () => {
 				},
 			});
 			console.log(response);
+			toast.success('Upload successfully', { id: loadingToast })
 			// alert('Images uploaded successfully!');
 		} catch (error) {
 			console.error('Error uploading images:', error);
 			// alert('Failed to upload images.');
+			toast.error('Upload Fail!', { id: loadingToast })
 		} finally {
 			setUploading(false);
 		}
@@ -86,6 +90,7 @@ const UploadImages = () => {
 	const handleBack = () => {
 		navigate(-1);
 	};
+
 
 	return (
 		<>
@@ -112,18 +117,23 @@ const UploadImages = () => {
 						<select
 							id="category"
 							value={selectedCategory}
-							onChange={handleCategoryChange}
+							onChange={(e) => {
+								const selectedOption = categories.find(
+									(category) => category._id === e.target.value
+								);
+								handleCategoryChange(selectedOption);
+								// setSelectedCategory(selectedOption);
+							}}
 							className="w-full p-2 border border-gray-300 rounded outline-none focus:ring-blue-500 focus:border-blue-500"
 						>
-							<option value="" disabled selected>
-								Choose a category
-							</option>
+							<option value="" disabled selected>Choose a category</option>
 							{categories?.map((category) => (
-								<option key={category.id} value={category?._id}>
-									{category?.name}
+								<option key={category._id} value={category._id}>
+									{category.name}
 								</option>
 							))}
 						</select>
+
 					</div>
 
 					{/* File input for image selection */}
@@ -150,7 +160,13 @@ const UploadImages = () => {
 						{uploading ? 'Uploading...' : 'Upload Images'}
 					</button>
 				</div>
-			</div>
+				<div className="mt-16 mx-auto border bg-slate-50	">
+					{selectedCategory == null
+						? <Gallery categoryId={setSelectedCategory} categoryName={setCategoryName} />
+						: <CategoryImages id={selectedCategory} name={categoryName} setSelectedCategory={setSelectedCategory} uploading={uploading} />}
+				</div>
+			</div >
+
 		</>
 	);
 };
