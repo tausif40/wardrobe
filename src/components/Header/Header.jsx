@@ -62,18 +62,18 @@ const Header = () => {
 					{/* Logo */}
 					<Link to={'/'} className="flex-shrink-0">
 						<div className="flex items-center">
-							<img src="/assets/img/logos/logo.png" alt="Best Fitted Wardrobe" className="w-44 lg:w-52" />
+							<img src="/assets/img/logos/logo_bright.png" alt="Best Fitted Wardrobe" className="w-44 lg:w-52" />
 						</div>
 					</Link>
 
 					{/* Contact Info */}
 					<div className="md:flex items-center gap-8 text-gray-600 hidden md:block">
 						<div className="flex items-center gap-2">
-							<Phone className="h-5 w-5 text-[#78D7E9]" />
+							<Phone className="h-5 w-5 text-mySky" />
 							<a href={`tel:${headerData.contactInfo.phone}`} className="hover:text-heading">{headerData.contactInfo.phone}</a>
 						</div>
 						<div className="flex items-center gap-2">
-							<Mail className="h-5 w-5 text-[#78D7E9]" />
+							<Mail className="h-5 w-5 text-mySky" />
 							<a href={`mailto:${headerData.contactInfo.email}`} className="hover:text-heading">{headerData.contactInfo.email}</a>
 						</div>
 					</div>
@@ -81,7 +81,7 @@ const Header = () => {
 					{/* Social Icons */}
 					<div className="lg:flex gap-3 hidden lg:block">
 						{headerData.socialLinks.map((social, index) => (
-							<Link key={index} href={social.link} className="bg-[#78D7E9] p-2 rounded-full hover:bg-[#6BC7D9]" target='_blank'>
+							<Link key={index} href={social.link} className="bg-mySky p-2 rounded-full hover:bg-[#6BC7D9]" target='_blank'>
 								{<social.platform className="h-5 w-5 text-white" />}
 							</Link>
 						))}
@@ -89,7 +89,7 @@ const Header = () => {
 				</div>
 
 				{/* Main Navigation */}
-				<nav className="bg-[#78D7E9] text-white">
+				<nav className="bg-mySky text-white">
 					<div className="container mx-auto px-4">
 
 						<div className='flex md:block w-full justify-between'>

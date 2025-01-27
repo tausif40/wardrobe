@@ -50,7 +50,7 @@ const MobileHeader = () => {
 				{/* Logo */}
 				<Link to={'/'} className="flex-shrink-0">
 					<div className="flex items-center">
-						<img src="/assets/img/logos/logo.png" alt="Best Fitted Wardrobe" className="w-44 lg:w-52" />
+						<img src="/assets/img/logos/logo_bright.png" alt="Best Fitted Wardrobe" className="w-44 lg:w-52" />
 					</div>
 				</Link>
 			</div>

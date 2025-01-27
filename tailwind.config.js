@@ -6,9 +6,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // primary: "#e1ed72",
         primary: "#dce775",
         primaryDark: "#d6dd52",
-        mySky: "#4dd0e1",
+        mySky: "#4dd0e2",
         darkSky: "#4dd0e1",
         text: "#535353",
         heading: "#013d8e",
