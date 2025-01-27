@@ -86,14 +86,15 @@ const AddCategory = () => {
 		}
 	};
 
-	const handleUpdate = async () => {
-		const loadingToast = toast.loading('Updating...');
+	const handleUpdate = async (e) => {
+		e.preventDefault();
 		setLoading(true)
-		setShowModal(false)
+		setShowEditModal(false)
+		const loadingToast = toast.loading('Updating...');
 		const formData = new FormData();
 		formData.append("image", img);
 		formData.append("name", categoryName);
-
+		console.log("click");
 		try {
 			await axios.put(`${BASE_URL}/category/${editCategoryId}`, formData, {
 				headers: {
