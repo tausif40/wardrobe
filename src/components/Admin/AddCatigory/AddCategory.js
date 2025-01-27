@@ -69,32 +69,48 @@ const AddCategory = () => {
 		formData.append("image", img);
 		formData.append("name", categoryName);
 
-		const loadingToast = toast.loading(`${editCategoryId ? 'Updating...' : 'adding...'} `);
+		const loadingToast = toast.loading('adding...');
 		try {
-			if (editCategoryId) {
-				// Update category
-				await axios.put(`${BASE_URL}/category/${editCategoryId}`, formData, {
-					headers: {
-						'Content-Type': 'multipart/form-data',
-						authorization: `Bearer ${token}`,
-					},
-				});
-				toast.success("Updated successfully", { id: loadingToast });
-			} else {
-				// Add new category
-				await axios.post(`${BASE_URL}/category`, formData, {
-					headers: {
-						'Content-Type': 'multipart/form-data',
-						authorization: `Bearer ${token}`,
-					},
-				});
-				toast.success("Category added successfully", { id: loadingToast });
-			}
+			await axios.post(`${BASE_URL}/category`, formData, {
+				headers: {
+					'Content-Type': 'multipart/form-data',
+					authorization: `Bearer ${token}`,
+				},
+			});
+			toast.success("Category added successfully", { id: loadingToast });
 			resetForm();
 		} catch (error) {
 			setLoading(false)
 			console.error("Error saving category:", error);
 			toast.error("Error saving category", { id: loadingToast });
+		}
+	};
+
+	const handleUpdate = async () => {
+		const loadingToast = toast.loading('Updating...');
+		setLoading(true)
+		setShowModal(false)
+		const formData = new FormData();
+		formData.append("image", img);
+		formData.append("name", categoryName);
+
+		try {
+			await axios.put(`${BASE_URL}/category/${editCategoryId}`, formData, {
+				headers: {
+					'Content-Type': 'multipart/form-data',
+					authorization: `Bearer ${token}`,
+				},
+			});
+			toast.success("Updated successfully", { id: loadingToast });
+			setDeleteId('')
+			setLoading(false)
+			fetchCategories();
+			// setCategories(categories.filter((category) => category.id !== id));
+		} catch (error) {
+			setDeleteId('')
+			setLoading(false)
+			console.error("Error Updated category:", error);
+			toast.error("Error Updated category", { id: loadingToast });
 		}
 	};
 
@@ -215,7 +231,7 @@ const AddCategory = () => {
 			</Modal >
 
 			<Modal show={showEditModal} onClose={() => { setShowEditModal(false) }}>
-				<form className="" onSubmit={handleSubmit}>
+				<form className="" onSubmit={handleUpdate}>
 					<div className="mb-4">
 						<label htmlFor="categoryName" className="block text-gray-700 font-medium mb-2">Category Name</label>
 						<input type="text" id="categoryName" className="w-full border border-gray-300 rounded p-2" required
