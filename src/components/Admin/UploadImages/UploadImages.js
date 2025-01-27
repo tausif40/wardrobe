@@ -9,7 +9,6 @@ import CategoryImages from './CategoryImages';
 import Gallery from './Gallery';
 import { IoIosWarning } from "react-icons/io";
 
-
 const UploadImages = () => {
 	const navigate = useNavigate();
 	const [ categories, setCategory ] = useState();
@@ -50,12 +49,12 @@ const UploadImages = () => {
 
 	const handleUpload = async () => {
 		if (!selectedCategory) {
-			toast('Please select a category first!', { icon: <IoIosWarning color='red' /> });
+			toast('Please select a category first!', { icon: <IoIosWarning color='#edbf40' /> });
 			return;
 		}
 
 		if (images.length === 0) {
-			alert('Please select at least one image to upload.');
+			toast('Please select at least one image to upload!', { icon: <IoIosWarning color='#edbf40' /> });
 			return;
 		}
 
@@ -77,10 +76,8 @@ const UploadImages = () => {
 			});
 			console.log(response);
 			toast.success('Upload successfully', { id: loadingToast })
-			// alert('Images uploaded successfully!');
 		} catch (error) {
 			console.error('Error uploading images:', error);
-			// alert('Failed to upload images.');
 			toast.error('Upload Fail!', { id: loadingToast })
 		} finally {
 			setUploading(false);
