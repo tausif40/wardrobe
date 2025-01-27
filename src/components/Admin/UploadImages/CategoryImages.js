@@ -121,7 +121,6 @@ const CategoryImages = ({ id, name, setSelectedCategory, uploading }) => {
 			<Modal show={showModal} onClose={() => { setShowModal(false) }}>
 				<div>
 					<p className="font-poppins text-xl mb-6 text-center">Are you Sure?</p>
-					<p className="text-sm font-poppins text-red-500">Note - If you delete category then category images are also deleted.</p>
 				</div>
 				<div className="flex justify-center gap-4 mt-10">
 					<button className="text-white px-4 py-2 bg-red-500 rounded" onClick={handleDelete} disabled={loading}>
