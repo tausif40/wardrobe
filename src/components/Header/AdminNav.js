@@ -23,13 +23,17 @@ function AdminNav() {
 
 
 				{/* Contact Info */}
-				<div className="md:flex items-center gap-8 text-gray-600 hidden md:block">
+				<div className="md:flex items-center gap-8 text-heading hidden md:block font-sans text-base">
 					<div className="flex items-center gap-2">
-						<Phone className="h-5 w-5 text-[#78D7E9]" />
-						<a href={`tel:${headerData.contactInfo.phone}`} className="hover:text-heading">{headerData.contactInfo.phone}</a>
+						<p className='bg-gray-100 rounded-full p-3'>
+							<Phone className="h-5 w-5 text-[#5d8dcb]" />
+						</p>
+						<a href={`tel:${headerData.contactInfo.phone}`} className="">{headerData.contactInfo.phone}</a>
 					</div>
 					<div className="flex items-center gap-2">
-						<Mail className="h-5 w-5 text-[#78D7E9]" />
+						<p className='bg-gray-100 rounded-full p-3'>
+							<Mail className="h-5 w-5 text-[#5d8dcb] " />
+						</p>
 						<a href={`mailto:${headerData.contactInfo.email}`} className="hover:text-heading">{headerData.contactInfo.email}</a>
 					</div>
 				</div>

@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Mail, Phone, Search, Menu } from 'lucide-react';
-import { GrGooglePlus } from "react-icons/gr";
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { IoLogoGoogleplus } from "react-icons/io";
 
 
 const Header = () => {
@@ -31,7 +31,7 @@ const Header = () => {
 		socialLinks: [
 			{ platform: FaFacebookF, link: "https://www.facebook.com/BestFittedWardrobe" },
 			{ platform: FaXTwitter, link: "#" },
-			{ platform: GrGooglePlus, link: "#" },
+			{ platform: IoLogoGoogleplus, link: "#" },
 			{ platform: BsInstagram, link: "#" }
 		],
 		navigationLinks: [
