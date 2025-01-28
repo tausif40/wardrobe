@@ -76,6 +76,7 @@ const UploadImages = () => {
 			});
 			console.log(response);
 			toast.success('Upload successfully', { id: loadingToast })
+			setImages([]);
 		} catch (error) {
 			console.error('Error uploading images:', error);
 			toast.error('Upload Fail!', { id: loadingToast })
@@ -87,7 +88,6 @@ const UploadImages = () => {
 	const handleBack = () => {
 		navigate(-1);
 	};
-
 
 	return (
 		<>

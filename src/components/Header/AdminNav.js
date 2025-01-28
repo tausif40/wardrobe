@@ -20,8 +20,6 @@ function AdminNav() {
 					</div>
 				</Link>
 
-
-
 				{/* Contact Info */}
 				<div className="md:flex items-center gap-8 text-heading hidden md:block font-sans text-base">
 					<div className="flex items-center gap-2">
