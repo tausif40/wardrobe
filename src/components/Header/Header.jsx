@@ -56,7 +56,7 @@ const Header = () => {
 	return (
 		<>
 
-			<header className="w-full bg-white ">
+			<header className="w-full bg-[#e5e5e5] ">
 				{/* Top Bar */}
 				<div className="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
 					{/* Logo */}
