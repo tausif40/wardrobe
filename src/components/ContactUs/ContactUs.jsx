@@ -39,7 +39,7 @@ const ContactUs = () => {
 				{/* Get in Touch Section */}
 				<div className="relative mb-12">
 					<div className="absolute inset-0 bg-[#2A9D8F] opacity-90"></div>
-					<div className="relative z-10 px-4 py-12 text-center text-white">
+					<div className="relative z-10 px-4 py-12 text-center text-gray-700">
 						<h2 className="text-4xl font-bold mb-8">Get in touch</h2>
 						<form className="max-w-md mx-auto space-y-4 flex flex-col">
 							<input type="text" placeholder="Name" className="bg-white px-4 py-2 focus:outline-mySky" />
