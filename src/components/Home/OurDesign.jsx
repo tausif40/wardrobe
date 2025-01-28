@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
+import "../../css/Home.css"
 
 function OurDesign() {
 	const [ images, setImages ] = useState([]);
@@ -35,6 +37,7 @@ function OurDesign() {
 			<section className="py-10 bg-gray-100 mb-10">
 				<div className="mx-auto">
 					<h2 className="text-5xl text-heading font-bold text-center mb-12">Our Design</h2>
+
 					<div className="grid grid-cols-2 md:grid-cols-4">
 						{images.map((imgSrc, index) => (
 							<img
@@ -45,6 +48,24 @@ function OurDesign() {
 							/>
 						))}
 					</div>
+
+					{/* <PhotoProvider maskOpacity={0.8}>
+						<div className="grid grid-cols-2 md:grid-cols-4">
+							{images?.map((image, index) => (
+								<div className='relative'>
+									<PhotoView key={index} src={image}>
+										<img
+											src={image}
+											alt='img'
+											className='object-contain'
+										/>
+
+									</PhotoView>
+								</div>
+							))}
+						</div>
+					</PhotoProvider > */}
+
 					<div className="text-center mt-6">
 						<Link to='/gallery'>
 							<button className="text-white border bg-mySky px-6 py-2 rounded-full hover:bg-darkSky hover:text-white transition-all">

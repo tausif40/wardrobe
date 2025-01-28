@@ -56,7 +56,7 @@ const Header = () => {
 	return (
 		<>
 
-			<header className="w-full bg-white">
+			<header className="w-full bg-white ">
 				{/* Top Bar */}
 				<div className="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
 					{/* Logo */}
@@ -66,25 +66,31 @@ const Header = () => {
 						</div>
 					</Link>
 
-					{/* Contact Info */}
-					<div className="md:flex items-center gap-8 text-gray-600 hidden md:block">
-						<div className="flex items-center gap-2">
-							<Phone className="h-5 w-5 text-mySky" />
-							<a href={`tel:${headerData.contactInfo.phone}`} className="hover:text-heading">{headerData.contactInfo.phone}</a>
+					<div className="flex items-center	 gap-10">
+						{/* Contact Info */}
+						<div className="md:flex items-center gap-8 text-heading hidden md:block font-sans text-base">
+							<div className="flex items-center gap-2">
+								<p className='bg-gray-100 rounded-full p-3'>
+									<Phone className="h-5 w-5 text-[#5d8dcb]" />
+								</p>
+								<a href={`tel:${headerData.contactInfo.phone}`} className="">{headerData.contactInfo.phone}</a>
+							</div>
+							<div className="flex items-center gap-2">
+								<p className='bg-gray-100 rounded-full p-3'>
+									<Mail className="h-5 w-5 text-[#5d8dcb] " />
+								</p>
+								<a href={`mailto:${headerData.contactInfo.email}`} className="hover:text-heading">{headerData.contactInfo.email}</a>
+							</div>
 						</div>
-						<div className="flex items-center gap-2">
-							<Mail className="h-5 w-5 text-mySky" />
-							<a href={`mailto:${headerData.contactInfo.email}`} className="hover:text-heading">{headerData.contactInfo.email}</a>
-						</div>
-					</div>
 
-					{/* Social Icons */}
-					<div className="lg:flex gap-3 hidden lg:block">
-						{headerData.socialLinks.map((social, index) => (
-							<Link key={index} href={social.link} className="bg-mySky p-2 rounded-full hover:bg-[#6BC7D9]" target='_blank'>
-								{<social.platform className="h-5 w-5 text-white" />}
-							</Link>
-						))}
+						{/* Social Icons */}
+						<div className="lg:flex gap-3 hidden lg:block">
+							{headerData.socialLinks.map((social, index) => (
+								<Link key={index} href={social.link} className="bg-mySky h-8 w-8 rounded-full hover:bg-[#6BC7D9] flex items-center justify-center" target='_blank'>
+									{<social.platform className="h-4 w-4 text-white" />}
+								</Link>
+							))}
+						</div>
 					</div>
 				</div>
 
@@ -105,7 +111,7 @@ const Header = () => {
 							{headerData.navigationLinks.map((navLink, index) => (
 								<>
 									<li key={index} className={`text-base md:font-light md:text-[11px] lg:text-sm xl:text-base ${isMenuOpen ? 'block' : 'hidden'} md:block border-t md:border-t-0 px-2 md:px-0 hover:bg-darkSky md:hover:bg-transparent`} >
-										<Link to={navLink.link} className={`block py-3 hover:text-primary transition-all ${location.pathname == navLink.link && 'text-[#ebf58c]'}`}>{navLink.title}</Link>
+										<Link to={navLink.link} className={`block py-3 hover:text-primary transition-all ${location.pathname == navLink.link && 'text-[#ebf58c]'} font-raleway font-normal`}>{navLink.title}</Link>
 									</li>
 									<li className='text-[#4ec1d8] hidden md:block '>|</li>
 								</>
