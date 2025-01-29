@@ -11,7 +11,6 @@ function Footer() {
 	]
 
 
-
 	return (
 		<>
 			<footer className="bg-mySky text-white">
