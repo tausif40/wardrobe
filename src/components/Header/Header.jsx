@@ -29,10 +29,10 @@ const Header = () => {
 	const headerData = {
 		contactInfo: { phone: "01708 7 56789", email: "info@bestfittedwardrobe.co.uk" },
 		socialLinks: [
-			{ platform: FaFacebookF, link: "https://www.facebook.com/BestFittedWardrobe" },
+			{ platform: FaFacebookF, link: "https://www.facebook.com/BestfittedWardrobeltd" },
 			{ platform: FaXTwitter, link: "#" },
 			{ platform: IoLogoGoogleplus, link: "#" },
-			{ platform: BsInstagram, link: "#" }
+			{ platform: BsInstagram, link: "https://www.instagram.com/bestfittedwardrobe/" }
 		],
 		navigationLinks: [
 			{ title: "HOME", link: "/" },
@@ -97,7 +97,7 @@ const Header = () => {
 				</div>
 
 				{/* Main Navigation */}
-				<nav className="2xl:container m-auto bg-mySky text-white">
+				<nav className="m-auto bg-mySky text-white">
 					<div className="container mx-auto px-4">
 
 						<div className='flex md:block w-full justify-between'>
@@ -126,7 +126,7 @@ const Header = () => {
 				</nav>
 
 				{/* Features Banner */}
-				<div className="2xl:container m-auto mx-auto md:py-2 bg-[#ffffff]">
+				<div className="mx-auto md:py-2 bg-[#ffffff]">
 					<div className="container md:px-2 lg:px-16 xl:px-20 md:flex items-center justify-between gap-6 text-sm text-gray-600">
 						{headerData.features.map((feature, index) => (
 							<div key={index} className="flex items-center gap-2 md:gap-1 xl:gap-2 border-b md:border-b-0 p-2 md:p-0">

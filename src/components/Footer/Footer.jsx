@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 function Footer() {
 
 	const socialLink = [
-		{ name: 'facebook', icon: '/assets/img/icons/facebook.png', link: 'https://www.facebook.com/BestFittedWardrob/' },
+		{ name: 'facebook', icon: '/assets/img/icons/facebook.png', link: 'https://www.facebook.com/BestfittedWardrobeltd' },
 		{ name: 'twitter', icon: '/assets/img/icons/twitter.png', link: 'https://x.com/' },
 		{ name: 'google', icon: '/assets/img/icons/google.png', link: '' },
-		{ name: 'linkedIn', icon: '/assets/img/icons/linkedin.png', link: 'https://www.linkedin.com/feed/' },
+		{ name: 'instagram', icon: '/assets/img/icons/linkedin.png', link: 'https://www.instagram.com/bestfittedwardrobe/' },
 	]
 
 

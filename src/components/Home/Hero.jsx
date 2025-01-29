@@ -13,7 +13,7 @@ function Hero() {
 	}
 
 	return (
-		<div className="2xl:container m-auto relative h-[550px] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: "url('./assets/img/homeCrouse/bed1.jpeg')" }}>
+		<div className="relative h-[550px] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: "url('./assets/img/homeCrouse/bed1.jpeg')" }}>
 			<div className="absolute inset-0 bg-cover bg-center"
 
 			>
