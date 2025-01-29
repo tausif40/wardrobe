@@ -30,9 +30,9 @@ const Header = () => {
 		contactInfo: { phone: "01708 7 56789", email: "info@bestfittedwardrobe.co.uk" },
 		socialLinks: [
 			{ platform: FaFacebookF, link: "https://www.facebook.com/BestfittedWardrobeltd" },
-			{ platform: FaXTwitter, link: "#" },
+			{ platform: FaXTwitter, link: "https://x.com" },
 			{ platform: IoLogoGoogleplus, link: "#" },
-			{ platform: BsInstagram, link: "https://www.instagram.com/bestfittedwardrobe/" }
+			{ platform: BsInstagram, link: "https://www.instagram.com/bestfittedwardrobe" }
 		],
 		navigationLinks: [
 			{ title: "HOME", link: "/" },
@@ -87,7 +87,7 @@ const Header = () => {
 							{/* Social Icons */}
 							<div className="lg:flex gap-3 hidden lg:block">
 								{headerData.socialLinks.map((social, index) => (
-									<Link key={index} href={social.link} className="bg-mySky h-8 w-8 rounded-full hover:bg-[#6BC7D9] flex items-center justify-center" target='_blank'>
+									<Link key={index} to={social.link} className="bg-mySky h-8 w-8 rounded-full hover:bg-[#6BC7D9] flex items-center justify-center" target='_blank'>
 										{<social.platform className="h-4 w-4 text-white" />}
 									</Link>
 								))}
