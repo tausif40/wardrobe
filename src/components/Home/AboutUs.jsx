@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const AboutUs = () => {
 	return (
-		<section className="bg-gray-50">
+		<section className="2xl:container m-auto bg-gray-50">
 			<div className="container mx-auto px-4">
 
 				<div className="w-full">

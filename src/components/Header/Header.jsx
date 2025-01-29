@@ -56,30 +56,32 @@ const Header = () => {
 	return (
 		<>
 
-			<header className="w-full bg-[#e5e5e5] ">
+			<header className="w-full  ">
 				{/* Top Bar */}
-				<div className="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
-					{/* Logo */}
-					<Link to={'/'} className="flex-shrink-0">
-						<div className="flex items-center">
-							<img src="/assets/img/logos/logo_bright.png" alt="Best Fitted Wardrobe" className="w-44 lg:w-52" />
-						</div>
-					</Link>
-
-					<div className="flex items-center	 gap-10">
-						{/* Contact Info */}
-						<div className="md:flex items-center gap-8 text-heading hidden md:block font-sans text-base">
-							<div className="flex items-center gap-2">
-								<p className='bg-gray-100 rounded-full p-3'>
-									<Phone className="h-5 w-5 text-[#5d8dcb]" />
-								</p>
-								<a href={`tel:${headerData.contactInfo.phone}`} className="">{headerData.contactInfo.phone}</a>
+				<div className='bg-[#e5e5e5]'>
+					<div className="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+						{/* Logo */}
+						<Link to={'/'} className="flex-shrink-0">
+							<div className="flex items-center">
+								<img src="/assets/img/logos/logo_bright.png" alt="Best Fitted Wardrobe" className="w-44 lg:w-52" />
 							</div>
-							<div className="flex items-center gap-2">
-								<p className='bg-gray-100 rounded-full p-3'>
-									<Mail className="h-5 w-5 text-[#5d8dcb] " />
-								</p>
-								<a href={`mailto:${headerData.contactInfo.email}`} className="hover:text-heading">{headerData.contactInfo.email}</a>
+						</Link>
+
+						<div className="flex items-center	 gap-10">
+							{/* Contact Info */}
+							<div className="md:flex items-center gap-8 text-heading hidden md:block font-sans text-base">
+								<div className="flex items-center gap-2">
+									<p className='bg-gray-100 rounded-full p-3'>
+										<Phone className="h-5 w-5 text-[#5d8dcb]" />
+									</p>
+									<a href={`tel:${headerData.contactInfo.phone}`} className="">{headerData.contactInfo.phone}</a>
+								</div>
+								<div className="flex items-center gap-2">
+									<p className='bg-gray-100 rounded-full p-3'>
+										<Mail className="h-5 w-5 text-[#5d8dcb] " />
+									</p>
+									<a href={`mailto:${headerData.contactInfo.email}`} className="hover:text-heading">{headerData.contactInfo.email}</a>
+								</div>
 							</div>
 						</div>
 
@@ -95,7 +97,7 @@ const Header = () => {
 				</div>
 
 				{/* Main Navigation */}
-				<nav className="bg-mySky text-white">
+				<nav className="2xl:container m-auto bg-mySky text-white">
 					<div className="container mx-auto px-4">
 
 						<div className='flex md:block w-full justify-between'>

@@ -34,11 +34,11 @@ function OurDesign() {
 
 	return (
 		<>
-			<section className="py-10 bg-gray-100 mb-10">
+			<section className="2xl:container py-10 bg-gray-100 mb-10 m-auto">
 				<div className="mx-auto">
 					<h2 className="text-5xl text-heading font-bold text-center mb-12">Our Design</h2>
 
-					<div className="grid grid-cols-2 md:grid-cols-4">
+					<div className="grid grid-cols-2 md:grid-cols-4 ">
 						{images.map((imgSrc, index) => (
 							<img
 								key={index}
@@ -48,23 +48,6 @@ function OurDesign() {
 							/>
 						))}
 					</div>
-
-					{/* <PhotoProvider maskOpacity={0.8}>
-						<div className="grid grid-cols-2 md:grid-cols-4">
-							{images?.map((image, index) => (
-								<div className='relative'>
-									<PhotoView key={index} src={image}>
-										<img
-											src={image}
-											alt='img'
-											className='object-contain'
-										/>
-
-									</PhotoView>
-								</div>
-							))}
-						</div>
-					</PhotoProvider > */}
 
 					<div className="text-center mt-6">
 						<Link to='/gallery'>
