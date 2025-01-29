@@ -1,6 +1,47 @@
 import CTA from '../page/CTA';
+import { useState } from "react";
+import axios from "axios";
 
 const ContactUs = () => {
+
+
+	const [ isLoading, setIsLoading ] = useState(false)
+	const [ sendMessage, setSendMessage ] = useState('Send Message')
+	const [ formData, setFormData ] = useState({
+		name: "",
+		email: "",
+		phone: "",
+		message: "",
+	});
+
+	const handleChange = (e) => {
+		setFormData({ ...formData, [ e.target.name ]: e.target.value });
+	};
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		setIsLoading(true)
+		setSendMessage('Message sending...')
+		console.log('formData', formData);
+		try {
+			const response = await axios.post("https://api.example.com/contact", formData);
+			console.log("Success:", response.data);
+			setSendMessage('Send Successfully')
+			setIsLoading(false)
+			setFormData({
+				name: "",
+				email: "",
+				phone: "",
+				message: "",
+			});
+		} catch (error) {
+			console.error("Error:", error);
+			setSendMessage('Failed! Try again')
+			setIsLoading(false)
+		}
+	};
+
+
 	return (
 		<>
 			<div div className='max-h-[450px] bg-gray-200 overflow-hidden' >
@@ -41,13 +82,49 @@ const ContactUs = () => {
 					<div className="absolute inset-0 bg-[#2A9D8F] opacity-90"></div>
 					<div className="relative z-10 px-4 py-12 text-center text-gray-700">
 						<h2 className="text-4xl font-bold mb-8">Get in touch</h2>
-						<form className="max-w-md mx-auto space-y-4 flex flex-col">
-							<input type="text" placeholder="Name" className="bg-white px-4 py-2 focus:outline-mySky" />
-							<input type="email" placeholder="Email" className="bg-white px-4 py-2 focus:outline-mySky" />
-							<input type="tel" placeholder="Phone" className="bg-white px-4 py-2 focus:outline-mySky" />
-							<textarea placeholder="Message" className="bg-white px-4 py-2 focus:outline-mySky" rows={4} />
-							<button type="submit" className="w-full bg-primary text-[#2A9D8F] hover:bg-primaryDark	 px-4 py-2 transition-all font-semibold">
-								Send Message
+						<form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4 flex flex-col">
+							<input
+								type="text"
+								name="name"
+								placeholder="Name"
+								value={formData.name}
+								onChange={handleChange}
+								className="bg-white px-4 py-2 focus:outline-mySky"
+								required
+							/>
+							<input
+								type="email"
+								name="email"
+								placeholder="Email"
+								value={formData.email}
+								onChange={handleChange}
+								className="bg-white px-4 py-2 focus:outline-mySky"
+								required
+							/>
+							<input
+								type="tel"
+								name="phone"
+								placeholder="Phone"
+								value={formData.phone}
+								onChange={handleChange}
+								className="bg-white px-4 py-2 focus:outline-mySky"
+								required
+							/>
+							<textarea
+								name="message"
+								placeholder="Message"
+								value={formData.message}
+								onChange={handleChange}
+								className="bg-white px-4 py-2 focus:outline-mySky"
+								rows={4}
+								required
+							/>
+							<button
+								type="submit"
+								className="w-full bg-primary text-[#2A9D8F] hover:bg-primaryDark px-4 py-2 transition-all font-semibold"
+								disabled={isLoading}
+							>
+								{sendMessage}
 							</button>
 						</form>
 					</div>
