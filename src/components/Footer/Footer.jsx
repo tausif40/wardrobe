@@ -44,7 +44,7 @@ function Footer() {
 					</nav>
 
 					<p className="text-center text-sm mt-8 text-heading">
-						© COPYRIGHT © 2023 BEST FITTED WARDROBE <br />
+						© COPYRIGHT © 2025 BEST FITTED WARDROBE <br />
 						ALL RIGHTS RESERVED
 					</p>
 				</div>

@@ -58,7 +58,7 @@ const Header = () => {
 
 			<header className="w-full  ">
 				{/* Top Bar */}
-				<div className='bg-[#e5e5e5]'>
+				<div className='bg-[#ffffff]'>
 					<div className="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
 						{/* Logo */}
 						<Link to={'/'} className="flex-shrink-0">
@@ -126,7 +126,7 @@ const Header = () => {
 				</nav>
 
 				{/* Features Banner */}
-				<div className="2xl:container m-auto mx-auto md:py-2 bg-[#e5e5e5]">
+				<div className="2xl:container m-auto mx-auto md:py-2 bg-[#ffffff]">
 					<div className="container md:px-2 lg:px-16 xl:px-20 md:flex items-center justify-between gap-6 text-sm text-gray-600">
 						{headerData.features.map((feature, index) => (
 							<div key={index} className="flex items-center gap-2 md:gap-1 xl:gap-2 border-b md:border-b-0 p-2 md:p-0">
