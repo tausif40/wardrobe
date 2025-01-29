@@ -34,8 +34,8 @@ function OurDesign() {
 
 	return (
 		<>
-			<section className="2xl:container py-10 bg-gray-100 mb-10 m-auto">
-				<div className="mx-auto">
+			<section className="py-10 bg-gray-100 mb-10 m-auto">
+				<div className="2xl:container mx-auto">
 					<h2 className="text-5xl text-heading font-bold text-center mb-12">Our Design</h2>
 
 					<div className="grid grid-cols-2 md:grid-cols-4 ">
