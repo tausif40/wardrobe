@@ -67,7 +67,7 @@ const Header = () => {
 							</div>
 						</Link>
 
-						<div className="flex items-center	 gap-10">
+						<div className="flex items-center	gap-10">
 							{/* Contact Info */}
 							<div className="md:flex items-center gap-8 text-heading hidden md:block font-sans text-base">
 								<div className="flex items-center gap-2">
@@ -83,15 +83,15 @@ const Header = () => {
 									<a href={`mailto:${headerData.contactInfo.email}`} className="hover:text-heading">{headerData.contactInfo.email}</a>
 								</div>
 							</div>
-						</div>
 
-						{/* Social Icons */}
-						<div className="lg:flex gap-3 hidden lg:block">
-							{headerData.socialLinks.map((social, index) => (
-								<Link key={index} href={social.link} className="bg-mySky h-8 w-8 rounded-full hover:bg-[#6BC7D9] flex items-center justify-center" target='_blank'>
-									{<social.platform className="h-4 w-4 text-white" />}
-								</Link>
-							))}
+							{/* Social Icons */}
+							<div className="lg:flex gap-3 hidden lg:block">
+								{headerData.socialLinks.map((social, index) => (
+									<Link key={index} href={social.link} className="bg-mySky h-8 w-8 rounded-full hover:bg-[#6BC7D9] flex items-center justify-center" target='_blank'>
+										{<social.platform className="h-4 w-4 text-white" />}
+									</Link>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>
@@ -126,7 +126,7 @@ const Header = () => {
 				</nav>
 
 				{/* Features Banner */}
-				<div className="mx-auto md:py-2 bg-white">
+				<div className="2xl:container m-auto mx-auto md:py-2 bg-[#e5e5e5]">
 					<div className="container md:px-2 lg:px-16 xl:px-20 md:flex items-center justify-between gap-6 text-sm text-gray-600">
 						{headerData.features.map((feature, index) => (
 							<div key={index} className="flex items-center gap-2 md:gap-1 xl:gap-2 border-b md:border-b-0 p-2 md:p-0">
