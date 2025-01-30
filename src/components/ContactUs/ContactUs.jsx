@@ -4,9 +4,10 @@ import axios from "axios";
 
 const ContactUs = () => {
 
-
+	const [ showPopup, setShowPopup ] = useState(false);
 	const [ isLoading, setIsLoading ] = useState(false)
 	const [ sendMessage, setSendMessage ] = useState('Send Message')
+	const BASE_URL = process.env.REACT_APP_API_URL;
 	const [ formData, setFormData ] = useState({
 		name: "",
 		email: "",
@@ -24,9 +25,11 @@ const ContactUs = () => {
 		setSendMessage('Message sending...')
 		console.log('formData', formData);
 		try {
-			const response = await axios.post("https://api.example.com/contact", formData);
+			const response = await axios.post(`${BASE_URL}/contact-us`, formData);
 			console.log("Success:", response.data);
 			setSendMessage('Send Successfully')
+			setShowPopup(true);
+			setTimeout(() => setShowPopup(false), 3000);
 			setIsLoading(false)
 			setFormData({
 				name: "",
@@ -131,6 +134,13 @@ const ContactUs = () => {
 				</div>
 				<CTA />
 			</div>
+			{showPopup && (
+				<div className="z-50 fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#f5fcd6] text-black px-6 py-3 rounded-md shadow-lg transition-opacity duration-500 ease-in-out animate-fadeInOut border-2 border-[#4be6bd]">
+					<div className='text-md md:text-xl p-3 text-center'>
+						Thank you for contacting us.<br />We will get back to you shortly.
+					</div>
+				</div>
+			)}
 		</>
 	)
 }
