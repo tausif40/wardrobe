@@ -1,12 +1,14 @@
 import CTA from '../page/CTA';
 import { useState } from "react";
 import axios from "axios";
+import toast from 'react-hot-toast';
 
 const ContactUs = () => {
 
 	const [ showPopup, setShowPopup ] = useState(false);
 	const [ isLoading, setIsLoading ] = useState(false)
 	const [ sendMessage, setSendMessage ] = useState('Send Message')
+	const [ errorMessage, setErrorMessage ] = useState(false)
 	const BASE_URL = process.env.REACT_APP_API_URL;
 	const [ formData, setFormData ] = useState({
 		name: "",
@@ -16,26 +18,36 @@ const ContactUs = () => {
 	});
 
 	const handleChange = (e) => {
+		if (e.target.name === 'phone') {
+			setErrorMessage(false)
+		}
 		setFormData({ ...formData, [ e.target.name ]: e.target.value });
 	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setIsLoading(true)
-		setSendMessage('Message sending...')
 		console.log('formData', formData);
-		try {
-			const response = await axios.post(`${BASE_URL}/contact-us`, formData);
-			console.log("Success:", response.data);
-			setSendMessage('Send Successfully')
-			setShowPopup(true);
-			setTimeout(() => setShowPopup(false), 3000);
+		if (formData.phone.length !== 11) {
+			toast.error('Phone number must be 11 digits')
+			setErrorMessage(true)
 			setIsLoading(false)
-			setFormData({
-				name: "",
-				email: "",
-				phone: "",
-				message: "",
+			return;
+		}
+		try {
+			setSendMessage('Message sending...')
+			await axios.post(`${BASE_URL}/contact-us`, formData).then((res) => {
+				console.log("Success:", res.data);
+				setSendMessage('Send Successfully')
+				setShowPopup(true);
+				setTimeout(() => setShowPopup(false), 3000);
+				setIsLoading(false)
+				setFormData({
+					name: "",
+					email: "",
+					phone: "",
+					message: "",
+				});
 			});
 		} catch (error) {
 			console.error("Error:", error);
@@ -106,17 +118,18 @@ const ContactUs = () => {
 								required
 							/>
 							<input
-								type="tel"
+								type="number"
 								name="phone"
 								placeholder="Phone"
 								value={formData.phone}
 								onChange={handleChange}
-								className="bg-white px-4 py-2 focus:outline-mySky"
-								maxLength={11}
+								className={`bg-white px-4 py-2 focus:outline-mySky ${errorMessage && 'border-2 border-red-600 text-red-500'}`}
+								required
+								maxLength="11"
 								pattern="\d{11}"
 								title="Phone number must be exactly 11 digits"
-								required
 							/>
+							{/* {errorMessage && <p className='text-red-700 text-sm text-start'>Phone number must be 11 digits</p>} */}
 							<textarea
 								name="message"
 								placeholder="Message"
