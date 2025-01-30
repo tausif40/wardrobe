@@ -55,8 +55,9 @@ const ContactUs = () => {
 				<div className="text-center mt-8 mb-12 text-text">
 					<h1 className="text-4xl font-bold text-[#003087] mb-4">CONTACT US</h1>
 					<h2 className="text-2xl mb-4">Bestfittedwardrobe</h2>
-					<p className="text-gray-600 max-w-6xl mx-auto text-sm">
-						Company Name : Best Fitted Wardrobe Address:Unit A3 Seedbed Centre Davidsonway Romford RM7 0AZ. MON-FRI 9:00A.M to 6:00P.M SAT:10:00A.M to 2:00P.M SUN: CLOSED
+					<p className="text-gray-600 max-w-6xl mx-auto text-sm grid">
+						<p>Company Name : Best Fitted Wardrobe Address:Unit A3 Seedbed Centre Davidsonway Romford RM7 0AZ.</p>
+						<p>MON-FRI 9:00A.M to 6:00P.M SAT:10:00A.M to 2:00P.M SUN: CLOSED</p>
 					</p>
 					<div className="flex flex-col justify-center gap-2 mt-4">
 						<a href="tel:01708756789" className="text-blue-600 hover:underline">01708 7 56789</a>
@@ -111,6 +112,9 @@ const ContactUs = () => {
 								value={formData.phone}
 								onChange={handleChange}
 								className="bg-white px-4 py-2 focus:outline-mySky"
+								maxLength={11}
+								pattern="\d{11}"
+								title="Phone number must be exactly 11 digits"
 								required
 							/>
 							<textarea
@@ -133,14 +137,15 @@ const ContactUs = () => {
 					</div>
 				</div>
 				<CTA />
-			</div>
+			</div >
 			{showPopup && (
 				<div className="z-50 fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#f5fcd6] text-black px-6 py-3 rounded-md shadow-lg transition-opacity duration-500 ease-in-out animate-fadeInOut border-2 border-[#4be6bd]">
 					<div className='text-md md:text-xl p-3 text-center'>
 						Thank you for contacting us.<br />We will get back to you shortly.
 					</div>
 				</div>
-			)}
+			)
+			}
 		</>
 	)
 }
