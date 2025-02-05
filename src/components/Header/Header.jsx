@@ -100,25 +100,25 @@ const Header = () => {
 				<nav className="m-auto bg-mySky text-white">
 					<div className="container mx-auto px-4">
 
-						<div className='flex md:block w-full justify-between'>
-							<div className='m-[6px] px-2 py-[2px] block md:hidden border rounded' onClick={() => setIsMenuOpen((pre) => !pre)}>
+						<div className='flex lg:block w-full justify-between'>
+							<div className='m-[6px] px-2 py-[2px] block lg:hidden border rounded' onClick={() => setIsMenuOpen((pre) => !pre)}>
 								<Menu className='text-primary' />
 							</div>
-							<div className="bg-primary ml-2 px-3 lg:px-4 py-2 lg:py-3 cursor-pointer md:hidden block">
+							<div className="bg-primary ml-2 px-3 lg:px-4 py-2 lg:py-3 cursor-pointer lg:hidden block">
 								<Search className="h-5 w-5 text-white" />
 							</div>
 						</div>
 
-						<ul className={`flex flex-col md:flex-row md:justify-between md:items-center md:gap-1 ${isMenuOpen && 'pt-4'}`}>
+						<ul className={`flex flex-col lg:flex-row lg:justify-between lg:items-center lg:gap-1 ${isMenuOpen && 'pt-4'}`}>
 							{headerData.navigationLinks.map((navLink, index) => (
 								<>
-									<li key={index} className={`text-base md:font-light md:text-[11px] lg:text-sm xl:text-base ${isMenuOpen ? 'block' : 'hidden'} md:block border-t md:border-t-0 px-2 md:px-0 hover:bg-darkSky md:hover:bg-transparent`} >
-										<Link to={navLink.link} className={`block py-3 hover:text-primary transition-all ${location.pathname == navLink.link && 'text-[#ebf58c]'} font-raleway font-normal`}>{navLink.title}</Link>
+									<li key={index} className={`text-base lg:font-light lg:text-[11px] lg:text-sm xl:text-base ${isMenuOpen ? 'block' : 'hidden'} lg:block border-t lg:border-t-0 px-2 lg:px-0 hover:bg-darkSky lg:hover:bg-transparent`} >
+										<Link to={navLink.link} className={`block py-3 hover:text-primary transition-all ${location.pathname === navLink.link && 'text-[#ebf58c]'} font-raleway font-normal`}>{navLink.title}</Link>
 									</li>
-									<li className='text-[#4ec1d8] hidden md:block '>|</li>
+									<li className='text-[#4ec1d8] hidden lg:block '>|</li>
 								</>
 							))}
-							<li className="bg-primary ml-2 px-3 lg:px-4 py-2 lg:py-3 cursor-pointer hidden md:block">
+							<li className="bg-primary ml-2 px-3 lg:px-4 py-2 lg:py-3 cursor-pointer hidden lg:block">
 								<Search className="h-5 w-5 text-white" />
 							</li>
 						</ul>
