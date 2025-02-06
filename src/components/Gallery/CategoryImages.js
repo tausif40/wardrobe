@@ -77,6 +77,7 @@ const CategoryImages = () => {
 								<img
 									src='/assets/img/logos/logo.png'
 									className="absolute right-4 bottom-5 w-24 object-cover z-50"
+									alt=''
 								/>
 							</div>
 						))}

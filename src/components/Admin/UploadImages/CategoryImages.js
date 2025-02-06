@@ -101,6 +101,7 @@ const CategoryImages = ({ id, name, setSelectedCategory, uploading }) => {
 								<img
 									src='/assets/img/logos/logo.png'
 									className="absolute right-4 bottom-5 w-24 object-cover z-50"
+									alt=''
 								/>
 								<div className="absolute top-4 right-4">
 									<button onClick={() => { setDeleteId(image._id); setShowModal(true) }} className="text-red-500 p-1	bg-black/40 hover:bg-black/60 transition rounded">

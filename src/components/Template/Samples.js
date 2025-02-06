@@ -61,7 +61,6 @@ export default function Samples({ data }) {
 	const handlePrevious = () => {
 		setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
 	};
-	console.log("data", data);
 
 	return (
 		<div className="container mx-auto px-4 py-8">
