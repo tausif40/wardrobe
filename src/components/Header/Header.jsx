@@ -106,7 +106,7 @@ const Header = () => {
 				</div>
 
 				{/* Main Navigation */}
-				{/* <nav className="m-auto bg-mySky text-white">
+				<nav className="m-auto bg-mySky text-white">
 					<div className="container mx-auto px-4">
 
 						<div className='flex lg:block w-full justify-between'>
@@ -133,56 +133,8 @@ const Header = () => {
 							</li>
 						</ul>
 					</div>
-				</nav> */}
-				<nav className="m-auto bg-mySky text-white">
-					<div className="container mx-auto px-4">
-						<div className="flex lg:block w-full justify-between">
-							{/* Menu Toggle Button */}
-							<div
-								className="m-[6px] px-2 py-[2px] block lg:hidden border rounded cursor-pointer"
-								onClick={() => setIsMenuOpen((prev) => !prev)}
-							>
-								<Menu className="text-primary" />
-							</div>
-							<div className="bg-primary ml-2 px-3 lg:px-4 py-2 lg:py-3 cursor-pointer lg:hidden block">
-								<Search className="h-5 w-5 text-white" />
-							</div>
-						</div>
-
-						{/* Smooth Animation */}
-						<div
-							ref={menuRef}
-							style={{
-								maxHeight: `${menuHeight}px`,
-								overflow: "hidden",
-								transition: "max-height 0.4s ease-in-out",
-							}}
-							className="lg:max-h-full"
-						>
-							<ul className="flex flex-col lg:flex-row lg:justify-between lg:items-center lg:gap-1">
-								{headerData.navigationLinks.map((navLink, index) => (
-									<li
-										key={index}
-										className="text-base lg:font-light lg:text-[11px] lg:text-sm xl:text-base border-t lg:border-t-0 px-2 lg:px-0 hover:bg-darkSky lg:hover:bg-transparent"
-										onClick={() => setIsMenuOpen(false)}
-									>
-										<Link
-											to={navLink.link}
-											className={`block py-3 hover:text-primary transition-all ${location.pathname === navLink.link && "text-[#ebf58c]"
-												} font-raleway font-normal`}
-										>
-											{navLink.title}
-										</Link>
-									</li>
-								))}
-								<li className="text-[#4ec1d8] hidden lg:block">|</li>
-								<li className="bg-primary ml-2 px-3 lg:px-4 py-2 lg:py-3 cursor-pointer hidden lg:block">
-									<Search className="h-5 w-5 text-white" />
-								</li>
-							</ul>
-						</div>
-					</div>
 				</nav>
+				
 
 				{/* Features Banner */}
 				<div className="mx-auto md:py-2 bg-[#ffffff]">
