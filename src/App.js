@@ -23,6 +23,7 @@ import AddCategory from './components/Admin/AddCatigory/AddCategory';
 import UploadImages from './components/Admin/UploadImages/UploadImages';
 import Gallery from './components/Gallery/Gallery';
 import CategoryImages from './components/Gallery/CategoryImages';
+import PageNotFound from './components/page/PageNotFound';
 
 function App() {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ function App() {
       sessionStorage.removeItem('sessionStartTime');
       navigate('/admin');
     }
-  }, [ navigate ]);
+  }, [ navigate, SESSION_TIMEOUT ]);
 
 
   useEffect(() => {
@@ -57,6 +58,7 @@ function App() {
 
   // Check if the current path starts with "/admin"
   const isAdminPath = location.pathname.startsWith('/admin');
+  // const isAdminPath = location.pathname === "/admin";
 
   return (
     <>
@@ -78,6 +80,7 @@ function App() {
         <Route path="/images/:id" element={<CategoryImages />} />
         <Route path="/terms-conditions" element={<TermsAndConditions />} />
         <Route path="/payment-terms-and-conditions" element={<PaymentConditions />} />
+        <Route path="/*" element={<PageNotFound />} />
 
         {/* admin */}
         <Route path="/admin" element={<AdminLogin />} />
