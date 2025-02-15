@@ -16,8 +16,6 @@ function Dashboard() {
 
 	return (
 		<>
-			<AdminNav />
-
 			<div className='h-[87vh] w-full bg-no-repeat object-cover' style={{ backgroundImage: "url('/assets/img/homeCrouse/bed1.jpeg')", objectFit: "cover" }}>
 
 				<div className='container py-4'>

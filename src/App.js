@@ -16,6 +16,7 @@ import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
 import CookiePolicy from './components/CookiePolicy/CookiePolicy';
 import PaymentConditions from './components/TermsAndConditions/PaymentConditions';
+import BackToTop from './components/BackToTop/backToTop'
 // admin
 import AdminLogin from './components/Admin/Login/AdminLogin';
 import Dashboard from './components/Admin/Dashboard/Dashboard';
@@ -24,6 +25,9 @@ import UploadImages from './components/Admin/UploadImages/UploadImages';
 import Gallery from './components/Gallery/Gallery';
 import CategoryImages from './components/Gallery/CategoryImages';
 import PageNotFound from './components/page/PageNotFound';
+import LandingPages from './components/LandingPages/LandingPages';
+import UserHeader from './components/layout/UserHeader';
+import AdminHeader from './components/layout/AdminHeader';
 
 function App() {
   const navigate = useNavigate();
@@ -66,29 +70,35 @@ function App() {
       {!isAdminPath && isVisible && <CookiePolicy />}
 
       {/* Show Header and Footer only if not on admin paths */}
-      {!isAdminPath && <Header />}
+      {/* {!isAdminPath && <Header />} */}
       <Routes>
-        <Route path="/" element={<HomePageLayout />} />
-        <Route path="/wardrobes" element={<Wardrobes />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/sliding-wardrobes" element={<SlidingWardrobes />} />
-        <Route path="/built-in-wardrobes" element={<BuiltInWardrobes />} />
-        <Route path="/fitted-kitchens" element={<FittedKitchens />} />
-        <Route path="/sale" element={<Sale />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/images/:id" element={<CategoryImages />} />
-        <Route path="/terms-conditions" element={<TermsAndConditions />} />
-        <Route path="/payment-terms-and-conditions" element={<PaymentConditions />} />
-        <Route path="/*" element={<PageNotFound />} />
+        <Route path="/" element={<UserHeader />}>
+          <Route index element={<HomePageLayout />} />
+          <Route path="wardrobes" element={<Wardrobes />} />
+          <Route path="contact" element={<ContactUs />} />
+          <Route path="about-us" element={<AboutUs />} />
+          <Route path="sliding-wardrobes" element={<SlidingWardrobes />} />
+          <Route path="built-in-wardrobes" element={<BuiltInWardrobes />} />
+          <Route path="fitted-kitchens" element={<FittedKitchens />} />
+          <Route path="sale" element={<Sale />} />
+          <Route path="gallery" element={<Gallery />} />
+          <Route path="images/:id" element={<CategoryImages />} />
+          <Route path="terms-conditions" element={<TermsAndConditions />} />
+          <Route path="payment-terms-and-conditions" element={<PaymentConditions />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Route>
+        <Route path="landing-pages" element={<LandingPages />} />
 
         {/* admin */}
-        <Route path="/admin" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<Dashboard />} />
-        <Route path="/admin/add-category" element={<AddCategory />} />
-        <Route path="/admin/upload-images" element={<UploadImages />} />
+        <Route path="/admin" element={<AdminHeader />}>
+          <Route index element={<AdminLogin />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="add-category" element={<AddCategory />} />
+          <Route path="upload-images" element={<UploadImages />} />
+        </Route>
       </Routes>
-      {!isAdminPath && <Footer />}
+      <BackToTop />
+      {/* {!isAdminPath && <Footer />} */}
     </>
   );
 }

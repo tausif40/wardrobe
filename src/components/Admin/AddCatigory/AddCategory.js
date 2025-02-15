@@ -159,7 +159,7 @@ const AddCategory = () => {
 
 	return (
 		<>
-			<AdminNav />
+			
 			<div className='container py-8'>
 
 				<button className='flex items-center text-mySky border border-mySky px-6 py-[6px] rounded-full hover:bg-mySky hover:text-white transition-all'

@@ -91,8 +91,6 @@ const UploadImages = () => {
 
 	return (
 		<>
-			<AdminNav />
-
 			<div className='container py-6'>
 
 				<button className='flex items-center text-mySky border border-mySky px-6 py-[6px] rounded-full hover:bg-mySky hover:text-white transition-all'
