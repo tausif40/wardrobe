@@ -32,7 +32,6 @@ import AdminHeader from './components/layout/AdminHeader';
 function App() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [ isVisible, setIsVisible ] = useState(false);
 
   const SESSION_TIMEOUT = 3 * 60 * 10000;
   useEffect(() => {
@@ -47,16 +46,6 @@ function App() {
 
 
   useEffect(() => {
-    const hasAccepted = Cookies.get("cookiesAccepted");
-    if (!hasAccepted) {
-      const timer = setTimeout(() => {
-        setIsVisible(true);
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
-  useEffect(() => {
     window.scrollTo(0, 0);
   }, [ location ]);
 
@@ -67,7 +56,7 @@ function App() {
   return (
     <>
       <Toaster position="top-right" reverseOrder={true} />
-      {!isAdminPath && isVisible && <CookiePolicy />}
+      {/* {!isAdminPath && isVisible && <CookiePolicy />} */}
 
       {/* Show Header and Footer only if not on admin paths */}
       {/* {!isAdminPath && <Header />} */}
@@ -75,7 +64,7 @@ function App() {
         <Route path="/" element={<UserHeader />}>
           <Route index element={<HomePageLayout />} />
           <Route path="wardrobes" element={<Wardrobes />} />
-          <Route path="contact" element={<ContactUs />} />
+          <Route path="contact-us" element={<ContactUs />} />
           <Route path="about-us" element={<AboutUs />} />
           <Route path="sliding-wardrobes" element={<SlidingWardrobes />} />
           <Route path="built-in-wardrobes" element={<BuiltInWardrobes />} />

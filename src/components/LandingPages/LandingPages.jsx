@@ -437,9 +437,9 @@ function LandingPages() {
 }
 
 const stats = [
-	{ value: "15+", label: "Years Experience" },
-	{ value: "1000+", label: "Projects Completed" },
-	{ value: "98%", label: "Client Satisfaction" },
+	{ value: "9+", label: "Years Experience" },
+	{ value: "5000+", label: "Projects Completed" },
+	{ value: "99%", label: "Client Satisfaction" },
 	{ value: "5+", label: "Design Awards" }
 ];
 
@@ -466,7 +466,7 @@ const features = [
 	},
 	{
 		icon: Sparkles,
-		title: "Lifetime Warranty",
+		title: "change it to 10 year warranty",
 		description: "Peace of mind with our comprehensive warranty covering materials and craftsmanship."
 	},
 	{

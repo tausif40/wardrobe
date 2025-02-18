@@ -11,7 +11,7 @@ const AboutUs = () => {
 							<p>Let our Designers Create Your Perfect Fitted Wardrobes Save up to 70% Off High Street Prices</p>
 						</div>
 						<div className="bg-primary text-white p-4">
-							<p>Finance Now Available, apply Online, Subject to status*</p>
+							<p>Apply online to 12 months interest free Finance available, Subject to status*</p>
 						</div>
 					</div>
 				</div>

@@ -12,7 +12,9 @@ const Header = () => {
 	const menuRef = useRef(null);
 	const [ isSearchOpen, setIsSearchOpen ] = useState(false);
 	const [ isMenuOpen, setIsMenuOpen ] = useState(false);
-
+	const [ scrollPosition, setScrollPosition ] = useState(0);
+	const [ navBar, setNaveBar ] = useState(false);
+	const [ navBarHide, setNaveBarHide ] = useState(false);
 	const [ menuHeight, setMenuHeight ] = useState(0);
 
 	useEffect(() => {
@@ -35,6 +37,30 @@ const Header = () => {
 		};
 	}, []);
 
+	const handleScroll = () => {
+		setScrollPosition(window.scrollY);
+	};
+
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
+	const navBackgroundChanger = () => {
+
+		if (window.scrollY > 80) {
+			setNaveBar(true)
+			setNaveBarHide(false)
+		} if (window.scrollY <= scrollPosition) {
+			setNaveBarHide(true)
+		} else {
+			setNaveBar(false)
+		}
+	}
+	window.addEventListener('scroll', navBackgroundChanger);
+
 	const headerData = {
 		contactInfo: { phone: "01708 7 56789", email: "info@bestfittedwardrobe.co.uk" },
 		socialLinks: [
@@ -52,7 +78,7 @@ const Header = () => {
 			{ title: "FITTED KITCHENS", link: "/fitted-kitchens" },
 			{ title: "SALE", link: "/sale" },
 			{ title: "GALLERY", link: "/gallery" },
-			{ title: "CONTACT US", link: "/contact" }
+			{ title: "CONTACT US", link: "/contact-us" }
 		],
 		features: [
 			{ image: "/assets/img/icons/england.png", text: "Made in UK" },
@@ -64,10 +90,10 @@ const Header = () => {
 
 	return (
 		<>
-
 			<header className="w-full  ">
 				{/* Top Bar */}
-				<div className='bg-[#ffffff]'>
+				<div className='h-[80px] lg:h-0'></div>
+				<div className='bg-[#ffffff] border-b-2 lg:border-b-0 w-full fixed lg:static top-0 z-50'>
 					<div className="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
 						{/* Logo */}
 						<Link to={'/'} className="flex-shrink-0">
@@ -135,7 +161,8 @@ const Header = () => {
 					</div>
 				</nav> */}
 
-				<nav className="m-auto bg-mySky text-white">
+				{/* <div className={`${navBarHide ? "fixed" : ""} scroll-smooth mx-auto px-10 h-20 w-full flex justify-between items-center z-50 duration-500 ${navBar ? "bg-[#726654]" : ""}`}> */}
+				<nav className={` m-auto bg-mySky text-white w-full scroll-smooth z-40`}>
 					<div className="container mx-auto px-4">
 						<div className="flex w-full justify-between lg:hidden">
 							{/* Menu Toggle Button */}
@@ -199,8 +226,10 @@ const Header = () => {
 
 					</div>
 				</nav>
+				{/* </div> */}
 
 				{/* Features Banner */}
+				{/* <div className='h-[45px]'></div> */}
 				<div className="mx-auto md:py-2 bg-[#ffffff]">
 					<div className="container md:px-2 lg:px-16 xl:px-20 md:flex items-center justify-between gap-6 text-sm text-gray-600">
 						{headerData.features.map((feature, index) => (
