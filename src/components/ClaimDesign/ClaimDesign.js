@@ -44,6 +44,14 @@ const ClaimDesign = ({ isOpen, onClose }) => {
 		if (captchaValue) setCaptchaError(null)
 	};
 
+	const handleCaptchaChange = (value) => {
+		setCaptchaValue(value);
+		if (value) {
+			setCaptchaError(null);
+		}
+	};
+
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		if (!captchaValue) {
@@ -136,7 +144,7 @@ const ClaimDesign = ({ isOpen, onClose }) => {
 
 						<div className="flex flex-col  justify-between items-center">
 							<div className="w-full">
-								<ReCAPTCHA sitekey={RECAPTCHA_SITE_KEY} onChange={setCaptchaValue} />
+								<ReCAPTCHA sitekey={RECAPTCHA_SITE_KEY} onChange={handleCaptchaChange} />
 								<p className="text-xs text-red-500">{captchaError}</p>
 							</div>
 							<div className="mt-5 md:mt-5">
