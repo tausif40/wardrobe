@@ -52,12 +52,12 @@ const Header = () => {
 
 	useEffect(() => {
 		if (!modalOpen) {
-			const timer = setTimeout(() => {
+			setTimeout(() => {
 				setModalOpen(true);
-			}, 30000);
-			return () => clearTimeout(timer);
+			}, 50);
+			// return () => clearTimeout(timer);
 		}
-	}, [ modalOpen ]);
+	}, []);
 
 	const headerData = {
 		contactInfo: { phone: "01708 7 56789", email: "info@bestfittedwardrobe.co.uk" },
@@ -93,7 +93,7 @@ const Header = () => {
 				{/* Top Bar */}
 				<div className='h-[80px] lg:h-0'></div>
 				<div className={`bg-[#ffffff] lg:border-b-0 w-full fixed lg:static top-0 z-40 ${scrolled && 'border-b shadow-md'}`}>
-					<div className="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
+					<div className="container mx-auto px-4 py-3 flex items-center justify-between">
 						{/* Logo */}
 						<Link to={'/'} className="flex-shrink-0">
 							<div className="flex items-center">
@@ -106,14 +106,14 @@ const Header = () => {
 							{/* <div className='cursor-pointer border border-sky-400 hover:border-sky-600 px-4 py-1 hover:bg-sky-100 hover:shadow-md bg-white rounded-full transition'>
 								<p className='text-sky-800'>Claim your free design</p>
 							</div> */}
-							<button className="clamBtn relative flex cursor-pointer items-center justify-center overflow-hidden rounded-[100px] border-none p-[1px] border border-sky-400" onClick={() => setModalOpen(true)}>
-								<span className=" btnSpan relative z-[1] w-full rounded-[100px] bg-white px-4 py-2 text-base text-sky-800 backdrop-blur-[40px]">
+							<button className="clamBtn relative flex cursor-pointer items-center justify-center overflow-hidden rounded-full p-[1px] border border-sky-400" onClick={() => setModalOpen(true)}>
+								<span className=" btnSpan relative z-10 w-full rounded-full bg-sky-100 px-4 py-2 text-sm lg:text-base text-sky-800 backdrop-blur-[40px] min-w-max">
 									Claim your free design
 								</span>
-							</button>
+							</button>	
 
 							{/* Contact Info */}
-							<div className="md:flex items-center gap-8 text-heading hidden md:block font-sans text-base	">
+							<div className="md:flex items-center gap-4 xl:gap-8 text-heading hidden md:block font-sans text-base	">
 								<div className="flex items-center gap-2">
 									<p className='bg-gray-100 rounded-full p-3'>
 										<Phone className="h-5 w-5 text-[#5d8dcb]" />

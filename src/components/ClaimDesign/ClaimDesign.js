@@ -64,8 +64,8 @@ const ClaimDesign = ({ isOpen, onClose }) => {
 
 	return (
 		isOpen && (
-			<div className="fixed px-2 inset-0 bg-black bg-opacity-50 flex justify-center items-start z-50 overflow-y-auto hideScrollBar">
-				<div ref={modalRef} className="relative bg-white p-6 rounded-lg shadow-lg lg:w-[90%] max-w-2xl mt-16 mb-12">
+			<div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-start z-50 overflow-y-auto hideScrollBar">
+				<div ref={modalRef} className="relative bg-white p-6 rounded-lg shadow-lg w-[96%] md:w-[95%] lg:w-[90%] max-w-2xl mt-16 mb-12">
 					<h2 className="text-lg font-semibold mb-2">
 						I WOULD LIKE TO BOOK A <span className="text-red-500">FREE</span> DESIGN VISIT
 					</h2>
@@ -112,7 +112,7 @@ const ClaimDesign = ({ isOpen, onClose }) => {
 						</div>
 
 						<div>
-							<label className="block text-sm font-semibold">I am looking for a Spacemaker <span className="text-red-500">*</span></label>
+							<label className="block text-sm font-semibold">I require design proposal for <span className="text-red-500">*</span></label>
 							<select name="lookingFor" value={formData.lookingFor} onChange={handleChange} className="border border-gray-400 p-2 w-full outline-mySky" required>
 								<option value='' disabled>select one option</option>
 								<option value='wardrobes'>Wardrobes</option>
@@ -127,13 +127,13 @@ const ClaimDesign = ({ isOpen, onClose }) => {
 							<textarea name="message" value={formData.message} onChange={handleChange} className="border border-gray-400 p-2 w-full outline-mySky" required></textarea>
 						</div>
 
-						<div className="flex justify-between items-center">
+						<div className="flex flex-col md:flex-row justify-between items-center">
 							<div className="w-full">
 								<ReCAPTCHA sitekey={RECAPTCHA_SITE_KEY} onChange={setCaptchaValue} />
 								<p className="text-xs text-red-500">{captchaError}</p>
 							</div>
-							<div className="">
-								<button type="submit" className="bg-gray-800 text-white px-5 py-2">
+							<div className="mt-5 md:mt-0">
+								<button type="submit" className="bg-gray-800 text-white px-16 md:px-5 py-2">
 									Submit
 								</button>
 							</div>
