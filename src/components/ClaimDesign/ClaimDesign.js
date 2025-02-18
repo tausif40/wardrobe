@@ -7,6 +7,8 @@ const ClaimDesign = ({ isOpen, onClose }) => {
 	const modalRef = useRef(null);
 	const [ captchaValue, setCaptchaValue ] = useState(null);
 	const [ captchaError, setCaptchaError ] = useState(null);
+	const [ loading, setLoading ] = useState(false);
+	const [ submitted, setSubmitted ] = useState(false);
 	const BASE_URL = process.env.REACT_APP_API_URL;
 
 	const RECAPTCHA_SITE_KEY = '6Lcq89oqAAAAAMCL4AozbLgvWf0bM0qj5Z4il_uA'
@@ -49,14 +51,19 @@ const ClaimDesign = ({ isOpen, onClose }) => {
 			return;
 		}
 		try {
+			setLoading(true)
 			console.log("formdata:", { ...formData, recaptchaToken: captchaValue });
-			await axios.post(`${BASE_URL}/design-book`, { ...formData, recaptchaToken: captchaValue }).then((res) => {
-				console.log("Success:", res.data);
-				console.log("Form submitted successfully!");
-				onClose();
+			await axios.post(`${BASE_URL}/design-book`, { ...formData, recaptchaToken: captchaValue })
+				.then((res) => {
+					console.log("Success:", res.data);
+					setLoading(false)
+					setSubmitted(true)
+					console.log("Form submitted successfully!");
+					// onClose();
 
-			});
+				});
 		} catch (err) {
+			setLoading(false)
 			console.log("Failed to submit. Try again.");
 			console.log(err);
 		}
@@ -127,14 +134,14 @@ const ClaimDesign = ({ isOpen, onClose }) => {
 							<textarea name="message" value={formData.message} onChange={handleChange} className="border border-gray-400 p-2 w-full outline-mySky" required></textarea>
 						</div>
 
-						<div className="flex flex-col md:flex-row justify-between items-center">
+						<div className="flex flex-col  justify-between items-center">
 							<div className="w-full">
 								<ReCAPTCHA sitekey={RECAPTCHA_SITE_KEY} onChange={setCaptchaValue} />
 								<p className="text-xs text-red-500">{captchaError}</p>
 							</div>
-							<div className="mt-5 md:mt-0">
-								<button type="submit" className="bg-gray-800 text-white px-16 md:px-5 py-2">
-									Submit
+							<div className="mt-5 md:mt-5">
+								<button type="submit" className={`text-white px-16 md:px-24 py-2 ${submitted ? 'bg-emerald-500' : loading ? 'bg-gray-600' : 'bg-gray-800'}`} disabled={loading || submitted}>
+									{loading ? 'Submitting...' : <span>{submitted ? 'Submitted' : 'Submit'}</span>}
 								</button>
 							</div>
 						</div>
