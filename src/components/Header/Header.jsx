@@ -5,6 +5,7 @@ import { BsInstagram } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoGoogleplus } from "react-icons/io";
+import ClaimDesign from '../ClaimDesign/ClaimDesign';
 
 
 const Header = () => {
@@ -12,11 +13,9 @@ const Header = () => {
 	const menuRef = useRef(null);
 	const [ isSearchOpen, setIsSearchOpen ] = useState(false);
 	const [ isMenuOpen, setIsMenuOpen ] = useState(false);
-	const [ scrollPosition, setScrollPosition ] = useState(0);
-	const [ navBar, setNaveBar ] = useState(false);
-	const [ navBarHide, setNaveBarHide ] = useState(false);
+	const [ scrolled, setScrolled ] = useState(false);
 	const [ menuHeight, setMenuHeight ] = useState(0);
-
+	const [ modalOpen, setModalOpen ] = useState(false);
 	useEffect(() => {
 		if (menuRef.current) {
 			setMenuHeight(isMenuOpen ? menuRef.current.scrollHeight : 0);
@@ -37,29 +36,28 @@ const Header = () => {
 		};
 	}, []);
 
-	const handleScroll = () => {
-		setScrollPosition(window.scrollY);
-	};
-
 	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY >= 80) {
+				setScrolled(true);
+			} else {
+				setScrolled(false);
+			}
+		};
 		window.addEventListener('scroll', handleScroll);
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
 
-	const navBackgroundChanger = () => {
-
-		if (window.scrollY > 80) {
-			setNaveBar(true)
-			setNaveBarHide(false)
-		} if (window.scrollY <= scrollPosition) {
-			setNaveBarHide(true)
-		} else {
-			setNaveBar(false)
+	useEffect(() => {
+		if (!modalOpen) {
+			const timer = setTimeout(() => {
+				setModalOpen(true);
+			}, 30000);
+			return () => clearTimeout(timer);
 		}
-	}
-	window.addEventListener('scroll', navBackgroundChanger);
+	}, [ modalOpen ]);
 
 	const headerData = {
 		contactInfo: { phone: "01708 7 56789", email: "info@bestfittedwardrobe.co.uk" },
@@ -72,7 +70,7 @@ const Header = () => {
 		navigationLinks: [
 			{ title: "HOME", link: "/" },
 			{ title: "ABOUT US", link: "/about-us" },
-			{ title: "WARDROBES", link: "/Wardrobes" },
+			{ title: "WARDROBES", link: "/wardrobes" },
 			{ title: "SLIDING WARDROBES", link: "/sliding-wardrobes" },
 			{ title: "BUILT IN WARDROBES", link: "/built-in-wardrobes" },
 			{ title: "FITTED KITCHENS", link: "/fitted-kitchens" },
@@ -90,10 +88,11 @@ const Header = () => {
 
 	return (
 		<>
+			<ClaimDesign isOpen={modalOpen} onClose={() => setModalOpen(false)} />
 			<header className="w-full  ">
 				{/* Top Bar */}
 				<div className='h-[80px] lg:h-0'></div>
-				<div className='bg-[#ffffff] border-b-2 lg:border-b-0 w-full fixed lg:static top-0 z-50'>
+				<div className={`bg-[#ffffff] lg:border-b-0 w-full fixed lg:static top-0 z-40 ${scrolled && 'border-b shadow-md'}`}>
 					<div className="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
 						{/* Logo */}
 						<Link to={'/'} className="flex-shrink-0">
@@ -103,8 +102,18 @@ const Header = () => {
 						</Link>
 
 						<div className="flex items-center	gap-10">
+
+							{/* <div className='cursor-pointer border border-sky-400 hover:border-sky-600 px-4 py-1 hover:bg-sky-100 hover:shadow-md bg-white rounded-full transition'>
+								<p className='text-sky-800'>Claim your free design</p>
+							</div> */}
+							<button className="clamBtn relative flex cursor-pointer items-center justify-center overflow-hidden rounded-[100px] border-none p-[1px] border border-sky-400" onClick={() => setModalOpen(true)}>
+								<span className=" btnSpan relative z-[1] w-full rounded-[100px] bg-white px-4 py-2 text-base text-sky-800 backdrop-blur-[40px]">
+									Claim your free design
+								</span>
+							</button>
+
 							{/* Contact Info */}
-							<div className="md:flex items-center gap-8 text-heading hidden md:block font-sans text-base">
+							<div className="md:flex items-center gap-8 text-heading hidden md:block font-sans text-base	">
 								<div className="flex items-center gap-2">
 									<p className='bg-gray-100 rounded-full p-3'>
 										<Phone className="h-5 w-5 text-[#5d8dcb]" />
@@ -162,7 +171,7 @@ const Header = () => {
 				</nav> */}
 
 				{/* <div className={`${navBarHide ? "fixed" : ""} scroll-smooth mx-auto px-10 h-20 w-full flex justify-between items-center z-50 duration-500 ${navBar ? "bg-[#726654]" : ""}`}> */}
-				<nav className={` m-auto bg-mySky text-white w-full scroll-smooth z-40`}>
+				<nav className={` m-auto bg-mySky text-white w-full scroll-smooth z-30`}>
 					<div className="container mx-auto px-4">
 						<div className="flex w-full justify-between lg:hidden">
 							{/* Menu Toggle Button */}

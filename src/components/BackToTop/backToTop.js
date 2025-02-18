@@ -41,16 +41,6 @@ const BackToTop = () => {
 					<MdOutlineArrowUpward />
 				</button>
 			)}
-
-			<a href="tel:01708756789" className="hover:underline">
-				<button
-					onClick={scrollToTop}
-					className="bg-gray-800 hover:bg-slate-900 text-white p-3 rounded-full shadow-md transition duration-300 z-50"
-					aria-label="Back to Top"
-				>
-					<img src="/assets/img/icons/call.png" alt="" className="w-4" />
-				</button>
-			</a>
 		</div>
 	);
 };

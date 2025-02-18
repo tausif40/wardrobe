@@ -41,7 +41,10 @@ function Footer() {
 						<Link to="/terms-conditions" className="px-4 border-r">Terms & Conditions</Link>
 						<Link to="payment-terms-and-conditions" className="px-4">Payment and Cancellation Terms</Link>
 					</nav>
-
+					<div className='flex justify-center mt-4 text-xl font-semibold'>
+						<a href="tel:01708756789" className="text-white hover:underline pr-3 border-r-2">01708756789</a>
+						<a href="tel:07961070327" className="text-white hover:underline pl-3">07961070327</a>
+					</div>
 					<p className="text-center text-sm mt-8 text-heading">
 						© COPYRIGHT © 2025 BEST FITTED WARDROBE <br />
 						ALL RIGHTS RESERVED
