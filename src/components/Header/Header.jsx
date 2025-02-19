@@ -95,13 +95,13 @@ const Header = () => {
 				<div className={`bg-[#ffffff] lg:border-b-0 w-full fixed lg:static top-0 z-40 ${scrolled && 'border-b shadow-md'}`}>
 					<div className="container mx-auto px-4 py-3 flex items-center justify-between">
 						{/* Logo */}
-						<Link to={'/'} className="flex-shrink-0">
+						<Link to={'/'} className="flex-shrink-0 mr-4">
 							<div className="flex items-center">
 								<img src="/assets/img/logos/logo-last.png" alt="Best Fitted Wardrobe" className="w-44 lg:w-52" />
 							</div>
 						</Link>
 
-						<div className="flex items-center	gap-10">
+						<div className="flex items-center flex-row-reverse lg:flex-row gap-10">
 
 							{/* <div className='cursor-pointer border border-sky-400 hover:border-sky-600 px-4 py-1 hover:bg-sky-100 hover:shadow-md bg-white rounded-full transition'>
 								<p className='text-sky-800'>Claim your free design</p>
@@ -114,22 +114,24 @@ const Header = () => {
 
 							{/* Contact Info */}
 							<div className="md:flex items-center gap-4 xl:gap-8 text-heading hidden md:block font-sans text-base	">
-								<div className="flex items-center gap-2">
+								<div className="flex items-center gap-2 ">
 									<p className='bg-gray-100 rounded-full p-3'>
 										<Phone className="h-5 w-5 text-[#5d8dcb]" />
 									</p>
-									<a href={`tel:${headerData.contactInfo.phone}`} className="">{headerData.contactInfo.phone}</a>
+									<a href={`tel:${headerData.contactInfo.phone}`} className="min-w-max">{headerData.contactInfo.phone}</a>
 								</div>
-								<div className="flex items-center gap-2">
-									<p className='bg-gray-100 rounded-full p-3'>
-										<Mail className="h-5 w-5 text-[#5d8dcb] " />
-									</p>
-									<a href={`mailto:${headerData.contactInfo.email}`} className="hover:text-heading">{headerData.contactInfo.email}</a>
+								<div className="hidden lg:block">
+									<div className="flex items-center gap-2">
+										<p className='bg-gray-100 rounded-full p-3'>
+											<Mail className="h-5 w-5 text-[#5d8dcb] " />
+										</p>
+										<a href={`mailto:${headerData.contactInfo.email}`} className="hover:text-heading">{headerData.contactInfo.email}</a>
+									</div>
 								</div>
 							</div>
 
 							{/* Social Icons */}
-							<div className="lg:flex gap-3 hidden lg:block">
+							<div className="xl:flex gap-3 hidden xl:block">
 								{headerData.socialLinks.map((social, index) => (
 									<Link key={index} to={social.link} className="bg-mySky h-8 w-8 rounded-full hover:bg-[#6BC7D9] flex items-center justify-center" target='_blank'>
 										{<social.platform className="h-4 w-4 text-white" />}
