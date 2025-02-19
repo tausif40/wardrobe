@@ -30,18 +30,23 @@ const BackToTop = () => {
 	}, []);
 
 	return (
-		<div className="flex flex-col gap-3 fixed bottom-4 right-3 md:right-4 lg:right-6">
+		<>
+			<div className="flex flex-col gap-3 fixed bottom-4 right-3 md:right-4 lg:right-6">
+				{isVisible && (
+					<button
+						onClick={scrollToTop}
+						className="bg-mySky text-white p-3 rounded-full shadow-lg transition duration-300 z-50"
+						aria-label="Back to Top"
+					>
+						<MdOutlineArrowUpward />
+					</button>
+				)}
+			</div>
 
-			{isVisible && (
-				<button
-					onClick={scrollToTop}
-					className="bg-mySky text-white p-3 rounded-full shadow-lg transition duration-300 z-50"
-					aria-label="Back to Top"
-				>
-					<MdOutlineArrowUpward />
-				</button>
-			)}
-		</div>
+			<div className="md:hidden fixed bottom-0 z-50 bg-[#3fa69a] h-14 w-full flex items-center text-white justify-center text-3xl font-bold ">
+				<p>CALL : &nbsp;</p><a href="tel:01708756789" className=" hover:underline tracking-wide" >01708756789</a>
+			</div>
+		</> 
 	);
 };
 

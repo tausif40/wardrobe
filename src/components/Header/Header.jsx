@@ -232,7 +232,6 @@ const Header = () => {
 								<Search className="h-5 w-5 text-white" />
 							</li>
 						</ul>
-
 					</div>
 				</nav>
 				{/* </div> */}

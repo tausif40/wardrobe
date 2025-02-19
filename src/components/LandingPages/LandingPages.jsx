@@ -244,28 +244,31 @@ function LandingPages() {
 
 			{/* Testimonials Section */}
 			<section id="testimonials" className="py-20">
-				<div className="container mx-auto border-2 py-12 px-8 rounded-md">
+				<div className="container mx-auto py-12 px-8 rounded-md">
 					<h2 className="text-4xl font-bold text-center mb-16">What Our Clients Say</h2>
-					<div className="grid md:grid-cols-3 gap-8 my-6">
+					<div className="flex flex-col gap-8 my-6">
 						{testimonials.map((testimonial, index) => (
 							<div key={index} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition border">
-								<div className="flex items-center mb-4">
-									{[ ...Array(5) ].map((_, i) => (
-										<Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-									))}
-								</div>
-								<p className="text-gray-600 mb-6 italic">"{testimonial.content}"</p>
-								<div className="flex items-center">
-									<img
-										src={testimonial.avatar}
-										alt={testimonial.name}
-										className="w-12 h-12 rounded-full object-cover mr-4"
-									/>
-									<div>
-										<p className="font-bold">{testimonial.name}</p>
-										<p className="text-gray-600 text-sm">{testimonial.location}</p>
+								<div className='flex gap-8'>
+									<div className="flex items-center">
+										<img
+											src={testimonial.avatar}
+											alt=''
+											className="w-12 h-12 rounded-full object-cover mr-4 bg-gray-200"
+										/>
+										<div>
+											<p className="font-bold">{testimonial.name}</p>
+											<p className="text-gray-600 text-sm">{testimonial.location}</p>
+										</div>
+									</div>
+									<div className="flex items-center mb-4">
+										{[ ...Array(5) ].map((_, i) => (
+											<Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+										))}
 									</div>
 								</div>
+								<p className="text-gray-600 mt-6 italic">"{testimonial.content}"</p>
+
 							</div>
 						))}
 					</div>
@@ -573,22 +576,28 @@ const products = [
 
 const testimonials = [
 	{
-		content: "The attention to detail and quality of craftsmanship exceeded our expectations. Our new wardrobe has transformed our bedroom completely.",
-		name: "Sarah Johnson",
+		content: "I recently had few wardrobes and a bed custom-built by Best Fitted Wardrobe, and I couldn’t be happier with the entire experience and final result! Before agreeing to the work, I visited their workshop, which was impressive in size and had a huge collection of designs and colors to choose from. Siva, who guided me through the options, was incredibly patient and attentive. He spent a lot of time with me, listening carefully to my needs and preferences, and ensuring that every detail was exactly as I envisioned.",
+		name: "Raj Kondapalli",
 		location: "New York",
 		avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80"
 	},
 	{
-		content: "From design to installation, the team was professional and efficient. The final result is exactly what we envisioned.",
-		name: "Michael Chen",
+		content: "Amazing work done by Best Fitted Wardrobes and very reasonably priced! Thanks to Omar and his team for their professional work. Omar is very experienced, he came to measure, gave suggestions and proposed a well designed wardrobe. We had to resize our wardrobe after being fitted and thanks to Omar and team they resized perfectly, almost couldn't notice a single adjustment was made. They're flexible and will do what they can to provide best customer experience. Would highly recommend 💯.",
+		name: "Evelyn S",
 		location: "San Francisco",
 		avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80"
 	},
 	{
-		content: "The custom solutions provided for our awkward space were ingenious. We now have double the storage in a beautiful design.",
-		name: "Emma Thompson",
+		content: "TI highly recommend this company, excellent work in fitting my bedroom wardrobe and TV media wall. Designer Zaheer helped with suggestions as my bedroom had some central heating pipes getting in the way. Fitters Neeraj and Ali did high quality work to install both wardrobe and TV Media unit.",
+		name: "Kaur sangha",
 		location: "London",
 		avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80"
+	},
+	{
+		content: "Fantastic service from start to finish,  the guys fitting the wardrobes left both Bedrooms clean and tidy.We Would definitely recommend them. When extension is finished going to get a quote for them to fit the Kitchen.",
+		name: "Ray Lomas",
+		location: "Bristol",
+		avatar: ""
 	}
 ];
 

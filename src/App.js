@@ -77,7 +77,7 @@ function App() {
           <Route path="payment-terms-and-conditions" element={<PaymentConditions />} />
           <Route path="/*" element={<PageNotFound />} />
         </Route>
-        <Route path="landing-pages" element={<LandingPages />} />
+        <Route path="/landing-pages" element={<LandingPages />} />
 
         {/* admin */}
         <Route path="/admin" element={<AdminHeader />}>
