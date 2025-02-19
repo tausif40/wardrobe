@@ -28,6 +28,7 @@ import PageNotFound from './components/page/PageNotFound';
 import LandingPages from './components/LandingPages/LandingPages';
 import UserHeader from './components/layout/UserHeader';
 import AdminHeader from './components/layout/AdminHeader';
+import BookConsultation from './components/BookConsultation/BookConsultation';
 
 function App() {
   const navigate = useNavigate();
@@ -82,6 +83,7 @@ function App() {
         <Route path="/admin" element={<AdminHeader />}>
           <Route index element={<AdminLogin />} />
           <Route path="dashboard" element={<Dashboard />} />
+          <Route path="customer-inquiries" element={<BookConsultation />} />
           <Route path="add-category" element={<AddCategory />} />
           <Route path="upload-images" element={<UploadImages />} />
         </Route>

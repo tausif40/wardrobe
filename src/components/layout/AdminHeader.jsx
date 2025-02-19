@@ -1,10 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import AdminNav from "../Header/AdminNav";
 
 const AdminHeader = () => {
+	const location = useLocation();
+	const isAdminLogin = location.pathname === '/admin';
 	return (
 		<>
-			<AdminNav />
+			{!isAdminLogin && <AdminNav />}
 			<Outlet />
 		</>
 	);
