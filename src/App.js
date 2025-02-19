@@ -75,7 +75,7 @@ function App() {
           <Route path="images/:id" element={<CategoryImages />} />
           <Route path="terms-conditions" element={<TermsAndConditions />} />
           <Route path="payment-terms-and-conditions" element={<PaymentConditions />} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route path="/*" element={<PageNotFound />} />
         </Route>
         <Route path="landing-pages" element={<LandingPages />} />
 

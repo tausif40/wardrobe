@@ -8,7 +8,7 @@ function PageNotFound() {
 	return (
 		<>
 			<div className={`w-full ${isAdminPath ? 'h-screen' : 'h-[80vh]'} flex justify-center items-center bg-slate-100`}>
-				<img src="/assets/img/pageNotFound.png" alt="" className='w-1/3' />
+				<img src="/assets/img/page-not-found.png" alt="" className='w-1/3' />
 			</div>
 		</>
 	)
