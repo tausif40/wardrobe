@@ -3,15 +3,6 @@ import '../../css/Home.css';
 
 function Hero() {
 
-	const headerData = {
-		features: [
-			{ image: "./assets/img/icons/england.png", text: "Made in UK" },
-			{ image: "./assets/img/icons/bage.png", text: "10 Year Product Guarantee" },
-			{ image: "./assets/img/icons/asset5.png", text: "Soft Close Doors As Standard" },
-			{ image: "./assets/img/icons/hanger.png", text: "We fit wardrobes in less than 2-3 weeks" }
-		]
-	}
-
 	return (
 		<div className="relative h-[550px] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: "url('./assets/img/homeCrouse/bed1.jpeg')" }}>
 			<div className="absolute inset-0 bg-cover bg-center"

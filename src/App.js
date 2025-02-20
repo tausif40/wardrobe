@@ -29,6 +29,7 @@ import LandingPages from './components/LandingPages/LandingPages';
 import UserHeader from './components/layout/UserHeader';
 import AdminHeader from './components/layout/AdminHeader';
 import BookConsultation from './components/BookConsultation/BookConsultation';
+import HomePage from './components/page/HomePage';
 
 function App() {
   const navigate = useNavigate();
@@ -64,6 +65,7 @@ function App() {
       <Routes>
         <Route path="/" element={<UserHeader />}>
           <Route index element={<HomePageLayout />} />
+          <Route path="home-page" element={<HomePage />} />
           <Route path="wardrobes" element={<Wardrobes />} />
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="about-us" element={<AboutUs />} />

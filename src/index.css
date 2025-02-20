@@ -137,11 +137,12 @@ input[type="number"] {
   background-position: 0px 0px;
   background-image: conic-gradient(
     from var(--animate-duration) at 50% 50%,
-    #fbf245 0%,
-    rgb(116, 242, 87) 25%,
-    #e9ad09 50%,
-    var(--Color) 75%,
-    #dce775 100%
+    #fbb245 0%,
+    rgb(116, 242, 87) 20%,
+    #e9ad09 40%,
+    rgb(235, 239, 4) 60%,
+    rgb(26, 232, 184) 80%,
+    #f2c261 100%
   );
   animation: rotate 2s infinite linear;
 }
