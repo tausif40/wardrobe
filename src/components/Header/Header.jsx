@@ -50,14 +50,14 @@ const Header = () => {
 		};
 	}, []);
 
-	useEffect(() => {
-		if (!modalOpen) {
-			setTimeout(() => {
-				setModalOpen(true);
-			}, 30000);
-			// return () => clearTimeout(timer);
-		}
-	}, []);
+	// useEffect(() => {
+	// 	if (!modalOpen) {
+	// 		setTimeout(() => {
+	// 			setModalOpen(true);
+	// 		}, 30000);
+	// 		// return () => clearTimeout(timer);
+	// 	}
+	// }, []);
 
 	const headerData = {
 		contactInfo: { phone: "01708 7 56789", email: "info@bestfittedwardrobe.co.uk" },

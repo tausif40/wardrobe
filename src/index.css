@@ -139,9 +139,9 @@ input[type="number"] {
     from var(--animate-duration) at 50% 50%,
     #fbb245 0%,
     rgb(116, 242, 87) 20%,
-    #e9ad09 40%,
-    rgb(235, 239, 4) 60%,
-    rgb(26, 232, 184) 80%,
+    #b2f339 40%,
+    rgb(245, 144, 167) 60%,
+    rgb(239, 192, 4) 80%,
     #f2c261 100%
   );
   animation: rotate 2s infinite linear;
