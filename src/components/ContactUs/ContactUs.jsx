@@ -70,7 +70,7 @@ const ContactUs = () => {
 
 
 			<div div className='max-h-[450px] bg-gray-200 overflow-hidden' >
-				<img src="/assets/img/bed1.jpeg" alt="" className='w-full object-cover' />
+				<img src="/assets/img/bed1.jpeg" alt="bed" className='w-full object-cover' />
 			</div >
 
 			<div className="container mx-auto px-4 py-8 mb-8 max-w-6xl">

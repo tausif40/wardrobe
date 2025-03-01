@@ -88,7 +88,7 @@ export default function Samples({ data }) {
 									<div className='w-full h-96 bg-gray-200 overflow-hidden flex justify-center items-center'>
 										<img
 											src={images[ currentIndex ].thumbnail}
-											alt=""
+											alt="thumbnail"
 											style={{
 												cursor: 'pointer',
 												display: 'block',
@@ -123,7 +123,7 @@ export default function Samples({ data }) {
 									<PhotoView key={index} src={image.src}>
 										<img
 											src={image.thumbnail}
-											alt=""
+											alt="thumbnail"
 											style={{
 												cursor: 'pointer',
 												width: '60px',

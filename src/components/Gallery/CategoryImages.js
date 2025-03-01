@@ -56,9 +56,9 @@ const CategoryImages = () => {
 					<IoMdArrowRoundBack /> <span>&nbsp;&nbsp;Back</span>
 				</button>
 
-				{!loading && images.length == 0 &&
+				{!loading && images.length === 0 &&
 					<div className='flex items-center justify-center'>
-						<img src="/assets/img/no_image_found.jpg" alt="" className='border' />
+						<img src="/assets/img/no_image_found.jpg" alt="no_image_found" className='border' />
 					</div>
 				}
 
@@ -77,7 +77,7 @@ const CategoryImages = () => {
 								<img
 									src='/assets/img/logos/logo.png'
 									className="absolute right-4 bottom-5 w-24 object-cover z-50"
-									alt=''
+									alt='logo'
 								/>
 							</div>
 						))}

@@ -80,9 +80,9 @@ const CategoryImages = ({ id, name, setSelectedCategory, uploading }) => {
 					<IoMdArrowRoundBack /> <span>&nbsp;&nbsp;Back</span>
 				</button>
 
-				{!loading && images.length == 0 &&
+				{!loading && images.length === 0 &&
 					<div className='flex items-center justify-center'>
-						<img src="/assets/img/no_image_found.jpg" alt="" className='border' />
+						<img src="/assets/img/no_image_found.jpg" alt="Page not found" className='border' />
 					</div>
 				}
 
@@ -101,7 +101,7 @@ const CategoryImages = ({ id, name, setSelectedCategory, uploading }) => {
 								<img
 									src='/assets/img/logos/logo.png'
 									className="absolute right-4 bottom-5 w-24 object-cover z-50"
-									alt=''
+									alt='logo'
 								/>
 								<div className="absolute top-4 right-4">
 									<button onClick={() => { setDeleteId(image._id); setShowModal(true) }} className="text-red-500 p-1	bg-black/40 hover:bg-black/60 transition rounded">

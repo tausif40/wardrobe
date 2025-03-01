@@ -18,7 +18,7 @@ const AboutUs = () => {
 
 				<div className="aboutMain">
 					<div className="circle hidden sm:block sm:left-[3%] md:left-[6%] lg:left-[10%] xl:left-[12%] bg-gray-300">
-						<img src="/assets/img/circleLeft.jpeg" alt="" className="rounded-full" />
+						<img src="/assets/img/circleLeft.jpeg" alt="circle Left" className="rounded-full" />
 					</div>
 					<div className="relative circle center-circle bg-white outline outline-[16px] outline-gray-100/50">
 						<h2 className="title text-text">ABOUT <span className="text-heading">US</span></h2>
@@ -30,7 +30,7 @@ const AboutUs = () => {
 						</Link>
 					</div>
 					<div className="circle hidden sm:block sm:right-[3%] md:right-[6%] lg:right-[10%] xl:right-[12%] bg-gray-300">
-						<img src="/assets/img/circleRight.jpeg" alt="" className="rounded-full" />
+						<img src="/assets/img/circleRight.jpeg" alt="circle Right" className="rounded-full" />
 					</div>
 				</div>
 

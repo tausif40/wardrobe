@@ -23,7 +23,7 @@ function Footer() {
 								className="w-12 h-12 p-3 rounded-full bg-white text-[#4DD4D4] flex items-center justify-center"
 								target='_blank'
 							>
-								<img src={social?.icon} alt="" />
+								<img src={social?.icon} alt="icon" />
 								<span className="sr-only">{social?.name}</span>
 							</Link>
 						))}

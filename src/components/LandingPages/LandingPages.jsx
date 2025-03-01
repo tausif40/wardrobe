@@ -253,7 +253,7 @@ function LandingPages() {
 									<div className="flex items-center">
 										<img
 											src={testimonial.avatar}
-											alt=''
+											alt='avatar'
 											className="w-12 h-12 rounded-full object-cover mr-4 bg-gray-200"
 										/>
 										<div>

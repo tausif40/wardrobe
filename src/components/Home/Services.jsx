@@ -34,8 +34,8 @@ const MyComponent = () => {
 					{data.map((item, index) => (
 						<div key={index} className="text-center relative">
 							<div className="mb-16">
-								<img src={item.img} alt="" className='h-80 w-full object-cover' />
-								<img src={item.icon} alt="" className='absolute left-1/2  -translate-x-1/2 -translate-y-1/2 ' />
+								<img src={item.img} alt="img" className='h-80 w-full object-cover' />
+								<img src={item.icon} alt="icon" className='absolute left-1/2  -translate-x-1/2 -translate-y-1/2 ' />
 								{/* <item.icon className="mx-auto h-12 w-12 text-[#4DD4D4]" />, */}
 							</div>
 							<h3 className="text-xl lg:text-2xl font-bold mb-3 text-heading">{item.title}</h3>

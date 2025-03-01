@@ -244,7 +244,7 @@ const Header = () => {
 					<div className="container md:px-2 lg:px-16 xl:px-20 md:flex items-center justify-between gap-6 text-sm text-gray-600">
 						{headerData.features.map((feature, index) => (
 							<div key={index} className="flex items-center gap-2 md:gap-1 xl:gap-2 border-b md:border-b-0 p-2 md:p-0">
-								<img src={feature?.image} className="w-3 lg:w-3 xl:w-5" alt='' />
+								<img src={feature?.image} className="w-3 lg:w-3 xl:w-5" alt='img' />
 								<span className='text-xs lg:text-sm'>{feature.text}</span>
 							</div>
 						))}
