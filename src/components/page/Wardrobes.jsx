@@ -1,7 +1,8 @@
 import React from 'react'
 import Banner from '../Template/Banner';
-import CTA from '../page/CTA';
+import CTA from './CTA';
 import Samples from '../Template/Samples';
+import { Helmet } from 'react-helmet-async';
 
 function Wardrobes() {
 	const data = {
@@ -29,6 +30,32 @@ function Wardrobes() {
 
 	return (
 		<>
+			<Helmet>
+				<title>Fitted Wardrobes | Custom Built-In & Sliding Wardrobes in the UK</title>
+				<meta name="description" content="Explore our range of fitted wardrobes, built-in wardrobes, and sliding wardrobes. Designed to maximize storage and enhance your home’s style." />
+				<meta name="keywords" content="fitted wardrobes UK, custom-built wardrobes, built-in wardrobes, sliding wardrobes" />
+				<meta name="robots" content="index, follow" />
+				<link rel="canonical" href="https://bestfittedwardrobe.co.uk/wardrobes" />
+				<script type="application/ld+json">
+					{JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "Product",
+						"name": "Fitted Wardrobes",
+						"image": "https://bestfittedwardrobe.co.uk/images/fitted-wardrobes.jpg",
+						"description": "Explore our range of fitted wardrobes, built-in wardrobes, and sliding wardrobes. Designed to maximize storage and enhance your home’s style.",
+						"brand": {
+							"@type": "Brand",
+							"name": "Best Fitted Wardrobes"
+						},
+						"offers": {
+							"@type": "Offer",
+							"url": "https://bestfittedwardrobe.co.uk/wardrobes",
+							"priceCurrency": "GBP",
+							"availability": "https://schema.org/InStock"
+						}
+					})}
+				</script>
+			</Helmet>
 			<Banner data={data} />
 			<Samples data={sampleData} />
 			<div className='my-20'>

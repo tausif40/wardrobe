@@ -2,19 +2,15 @@ import { Toaster } from 'react-hot-toast';
 import './App.css';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import HomePageLayout from './components/layout/HomePageLayout';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 import TermsAndConditions from './components/TermsAndConditions/TermsAndConditions';
 import ContactUs from './components/ContactUs/ContactUs';
 import AboutUs from './components/page/AboutUs';
-import Wardrobes from './components/Wardrobe/Wardrobes';
+import Wardrobes from './components/page/Wardrobes';
 import SlidingWardrobes from './components/page/SlidingWardrobes';
 import BuiltInWardrobes from './components/page/BuiltInWardrobes';
 import FittedKitchens from './components/page/FittedKitchens';
 import Sale from './components/page/Sale';
-import Cookies from 'js-cookie';
-import { useEffect, useState } from 'react';
-import CookiePolicy from './components/CookiePolicy/CookiePolicy';
+import { useEffect } from 'react';
 import PaymentConditions from './components/TermsAndConditions/PaymentConditions';
 import BackToTop from './components/BackToTop/backToTop'
 // admin
@@ -52,7 +48,7 @@ function App() {
   }, [ location ]);
 
   // Check if the current path starts with "/admin"
-  const isAdminPath = location.pathname.startsWith('/admin');
+  // const isAdminPath = location.pathname.startsWith('/admin');
   // const isAdminPath = location.pathname === "/admin";
 
   return (

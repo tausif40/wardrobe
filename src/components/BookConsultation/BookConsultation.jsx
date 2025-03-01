@@ -75,13 +75,13 @@ const BookConsultation = () => {
 					<tbody>
 						{filteredData.map((item) => (
 							<tr key={item._id} className="border-b hover:bg-gray-50 even:bg-gray-100">
-								<td className="p-3"><p className="min-w-max">{item.title} {item.firstName} {item.lastName}</p></td>
+								<td className="p-3"><p className="min-w-28">{item.title} {item.firstName} {item.lastName}</p></td>
 								<td className="p-3"><p className="min-w-max">{item.telephone}</p></td>
 								<td className="p-3"><p className="min-w-max">{item.email}</p></td>
-								<td className="p-3"><p className="min-w-max">{item.address}</p></td>
+								<td className="p-3"><p className="min-w-24">{item.address}</p></td>
 								<td className="p-3">{item.lookingFor}</td>
-								<Tooltip title={item.message}>
-									<td className="p-3 min-w-48" type="primary">
+								<Tooltip title={item.message} color='#1f2937'>
+									<td className="p-3 min-w-48 cursor-default hover:text-[#4e7bdd]" type="primary">
 										{item.message.length > 40 ? item.message.substring(0, 40) + '.....' : item.message}
 									</td>
 								</Tooltip>
@@ -92,7 +92,7 @@ const BookConsultation = () => {
 					</tbody>
 				</table>
 			</div>
-		</div>
+		</div >
 	);
 };
 

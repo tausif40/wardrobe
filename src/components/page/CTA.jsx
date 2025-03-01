@@ -1,6 +1,5 @@
 import React from 'react'
-import { MapPin, Phone, Mail, Check } from 'lucide-react'
-import { GiCheckMark } from "react-icons/gi";
+import { MapPin, Phone, Mail } from 'lucide-react'
 import { IoIosCheckmark } from "react-icons/io";
 
 function CTA() {

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Award as Wardrobe, ChevronDown, CheckCircle2, Menu, X, Star, Clock, Shield, PenTool as Tool, Palette, Ruler, Heart, Sparkles, Gem, Settings, Users, Home, Briefcase } from 'lucide-react';
+import React, { useState } from 'react';
+import { Award as ChevronDown, CheckCircle2, Menu, X, Star, Clock, Shield, PenTool as Tool, Palette, Ruler, Heart, Sparkles, Gem, Settings, Users, Home, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import CTA from '../page/CTA';
@@ -147,7 +147,7 @@ function LandingPages() {
 			<section id="features" className="py-20">
 				<div className="container mx-auto px-6">
 					<h2 className="text-4xl font-bold text-center mb-16 text-headingGray">Why Choose Us</h2>
-					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-10">
 						{features.map((feature, index) => (
 							<div key={index} className="text-center">
 								<div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition hover:border-[#3fa69a] border-2">
@@ -162,10 +162,10 @@ function LandingPages() {
 			</section>
 
 			{/* Process Section */}
-			<section id="process" className="py-20 bg-gradient-to-r from-[#dce775]/10 to-[#4dd0e1]/10">
+			<section id="process" className="py-14 bg-gradient-to-r from-[#dce775]/10 to-[#4dd0e1]/10">
 				<div className="container mx-auto px-6">
 					<h2 className="text-4xl font-bold text-center mb-16">Our Design Process</h2>
-					<div className="grid md:grid-cols-4 gap-8">
+					<div className="grid md:grid-cols-4 gap-8 mb-10">
 						{process.map((step, index) => (
 							<div key={index} className="relative">
 								<div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition h-full">
@@ -186,7 +186,7 @@ function LandingPages() {
 			<section id="materials" className="py-20">
 				<div className="container mx-auto px-6">
 					<h2 className="text-4xl font-bold text-center mb-16">Premium Materials</h2>
-					<div className="grid md:grid-cols-3 gap-12">
+					<div className="grid md:grid-cols-3 gap-12 mb-10">
 						{materials.map((material, index) => (
 							<div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
 								<img

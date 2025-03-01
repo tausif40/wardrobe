@@ -18,15 +18,6 @@ const colorSamples = [
 	{ id: '1290', name: 'High Gloss Black Galaxy', type: 'bg-[#0a0a0a]' },
 ]
 
-const kitchenSamples = [
-	{
-		id: 1,
-		url: "/assets/img/kitchen.jpeg",
-		alt: "Modern white kitchen with black countertops"
-	},
-	// Add more kitchen samples as needed
-]
-
 const images = [
 	{
 		src: "/assets/img/tempCrousel/img1.jpg",

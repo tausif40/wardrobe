@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from '../Template/Banner';
 import CTA from './CTA';
 import Samples from '../Template/Samples';
+import { Helmet } from 'react-helmet-async';
 
 export default function SlidingWardrobes() {
 	const data = {
@@ -28,6 +29,13 @@ export default function SlidingWardrobes() {
 
 	return (
 		<>
+			<Helmet>
+				<title>Sliding Wardrobes | Modern & Space-Saving Storage Solutions</title>
+				<meta name="description" content="Get sleek and space-saving sliding wardrobes designed to fit any room. Customize colors, materials, and layouts to match your home." />
+				<meta name="keywords" content="sliding wardrobes UK, modern wardrobes, space-saving wardrobes, custom sliding doors" />
+				<meta name="robots" content="index, follow" />
+				<link rel="canonical" href="https://bestfittedwardrobe.co.uk/sliding-wardrobes" />
+			</Helmet>
 			<Banner data={data} />
 			<Samples data={sampleData} />
 			<div className='my-20'>

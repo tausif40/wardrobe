@@ -2,6 +2,7 @@ import CTA from '../page/CTA';
 import { useState } from "react";
 import axios from "axios";
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const ContactUs = () => {
 
@@ -59,6 +60,15 @@ const ContactUs = () => {
 
 	return (
 		<>
+			<Helmet>
+				<title>Contact Best Fitted Wardrobes | Get a Free Quote Today</title>
+				<meta name="description" content="Need a custom wardrobe or fitted kitchen? Contact us today for a free consultation and expert advice on your storage solutions." />
+				<meta name="keywords" content="contact best fitted wardrobes, custom wardrobes UK, fitted kitchen consultation, wardrobe installation UK" />
+				<meta name="robots" content="index, follow" />
+				<link rel="canonical" href="https://bestfittedwardrobe.co.uk/contact-us" />
+			</Helmet>
+
+
 			<div div className='max-h-[450px] bg-gray-200 overflow-hidden' >
 				<img src="/assets/img/bed1.jpeg" alt="" className='w-full object-cover' />
 			</div >

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import CTA from "../page/CTA";
 import apiClient from "../../lib/apiClient";
 import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const Gallery = () => {
@@ -26,6 +27,14 @@ const Gallery = () => {
 
 	return (
 		<>
+			<Helmet>
+				<title>Fitted Wardrobes & Kitchens Gallery | Design Inspiration</title>
+				<meta name="description" content="Browse our gallery of fitted wardrobes, built-in storage, and fitted kitchens. Get inspired and book a free consultation today!" />
+				<meta name="keywords" content="fitted wardrobes gallery, custom wardrobe designs, fitted kitchens gallery, interior design ideas" />
+				<meta name="robots" content="index, follow" />
+				<link rel="canonical" href="https://bestfittedwardrobe.co.uk/gallery" />
+			</Helmet>
+
 			<div className='min-h-[400px] max-h-[400px] bg-no-repeat bg-bottom w-full overflow-hidden bg-gray-300' style={{ backgroundImage: "url('/assets/img/bed1.jpeg')" }}>
 				{/* <img src='/assets/img/bed1.jpeg' alt="Banner" className='object-bottom w-full' /> */}
 			</div>

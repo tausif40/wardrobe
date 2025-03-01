@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from '../Template/Banner';
 import CTA from './CTA';
 import Samples from '../Template/Samples';
+import { Helmet } from 'react-helmet-async';
 
 export default function FittedKitchens() {
 	const data = {
@@ -30,6 +31,13 @@ export default function FittedKitchens() {
 	}
 	return (
 		<>
+			<Helmet>
+				<title>Fitted Kitchens | Custom Kitchen Designs & Installations</title>
+				<meta name="description" content="Upgrade your kitchen with high-quality fitted kitchen designs. Custom cabinetry, space-saving layouts, and premium materials." />
+				<meta name="keywords" content="fitted kitchens UK, modern kitchens, custom kitchen cabinets, space-saving kitchens" />
+				<meta name="robots" content="index, follow" />
+				<link rel="canonical" href="https://bestfittedwardrobe.co.uk/fitted-kitchens" />
+			</Helmet>
 			<Banner data={data} />
 			<Samples data={sampleData} />
 			<div className='my-20'>

@@ -1,7 +1,7 @@
 import React from 'react'
-import { ChevronLeft, ChevronRight, Mail, Phone } from 'lucide-react'
 import CTA from './CTA'
 import Banner from '../Template/Banner';
+import { Helmet } from 'react-helmet-async';
 
 function AboutUs() {
 	const data = {
@@ -26,6 +26,29 @@ function AboutUs() {
 	};
 	return (
 		<>
+			<Helmet>
+				<title>About Best Fitted Wardrobes | Custom Wardrobe Experts</title>
+				<meta name="description" content="Learn more about Best Fitted Wardrobes, our expertise in custom-built wardrobes, and our commitment to quality craftsmanship." />
+				<meta name="keywords" content="about best fitted wardrobes, custom wardrobe experts, wardrobe designers UK" />
+				<meta name="robots" content="index, follow" />
+				<link rel="canonical" href="https://bestfittedwardrobe.co.uk/about-us" />
+
+				<script type="application/ld+json">
+					{JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "Organization",
+						"name": "Best Fitted Wardrobes",
+						"url": "https://bestfittedwardrobe.co.uk/about-us",
+						"logo": "https://bestfittedwardrobe.co.uk/logo.png",
+						"description": "Learn more about Best Fitted Wardrobes, our expertise in custom-built wardrobes, and our commitment to quality craftsmanship.",
+						"sameAs": [
+							"https://www.facebook.com/bestfittedwardrobes",
+							"https://www.instagram.com/bestfittedwardrobes"
+						]
+					})}
+				</script>
+			</Helmet>
+
 			<Banner data={data} />
 			<div className='mt-10 mb-14'>
 				<CTA />

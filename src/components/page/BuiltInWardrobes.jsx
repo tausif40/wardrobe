@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from '../Template/Banner';
 import CTA from './CTA';
 import Samples from '../Template/Samples';
+import { Helmet } from 'react-helmet-async';
 
 export default function BuiltInWardrobes() {
 	const data = {
@@ -28,6 +29,13 @@ export default function BuiltInWardrobes() {
 
 	return (
 		<>
+			<Helmet>
+				<title>Built-in Wardrobes | Custom-Fitted Storage for Your Home</title>
+				<meta name="description" content="Maximize your space with built-in wardrobes tailored to your needs. Choose from classic, modern, and luxury designs." />
+				<meta name="keywords" content="built-in wardrobes UK, custom wardrobes, fitted bedroom wardrobes, modern storage solutions" />
+				<meta name="robots" content="index, follow" />
+				<link rel="canonical" href="https://bestfittedwardrobe.co.uk/built-in-wardrobes" />
+			</Helmet>
 			<Banner data={data} />
 			<Samples data={sampleData} />
 			<div className='my-20'>
