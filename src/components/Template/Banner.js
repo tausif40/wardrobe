@@ -3,13 +3,6 @@ import React from 'react'
 function Banner({ data }) {
 	return (
 		<>
-			{/* <div div className='relative h-[350px] overflow-hidden object-cover' style={{ backgroundImage: `url('${data.banner}')` }}>
-				<div className='w-full h-80  z-50'>
-					<p className="text-4xl md:text-6xl font-bold text-blue-900 mb-12 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-						WARDROBES
-					</p>
-				</div>
-			</div > */}
 			<div className='min-h-[100px] max-h-[400px] w-full overflow-hidden bg-gray-300'>
 				<img src={data.banner} alt="Banner" className='object-bottom w-full' />
 			</div>
@@ -24,10 +17,7 @@ function Banner({ data }) {
 					<div>
 						{/* Image Section */}
 						<div className="w-full md:w-auto md:float-left md:pr-5 lg:pr-10 mb-8 md:pb-3 lg:pb-5">
-							<img
-								src={data.image.src}
-								width={data.image.width}
-								height={data.image.height}
+							<img src={data.image.src} width={data.image.width} height={data.image.height} alt='img'
 								className="w-full h-auto md:w-[400px] lg:w-[450px] lg:h-80 object-cover"
 							/>
 						</div>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 import "../../css/Home.css"
 

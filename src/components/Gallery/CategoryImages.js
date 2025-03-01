@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
-import axios from 'axios';
 import apiClient from '../../lib/apiClient';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import CTA from '../page/CTA';
@@ -17,7 +16,6 @@ const CategoryImages = () => {
 	const [ loading, setLoading ] = useState(false);
 	const params = useParams()
 	// console.log(params);
-	const BASE_URL = process.env.REACT_APP_API_URL;
 	useEffect(() => {
 		setLoading(true)
 		apiClient.get(`image?categoryId=${params?.id}`)

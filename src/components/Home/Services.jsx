@@ -1,5 +1,4 @@
 import React from 'react'
-import { Maximize2, Home, CookingPotIcon as Kitchen } from 'lucide-react'
 import { Link } from 'react-router-dom';
 
 const data = [

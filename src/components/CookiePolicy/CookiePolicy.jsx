@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import { IoClose } from "react-icons/io5";
 import ManageCookies from './ManageCookies';
 
 function CookiePolicy() {

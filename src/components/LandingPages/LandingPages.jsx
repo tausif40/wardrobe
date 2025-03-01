@@ -8,7 +8,6 @@ import axios from 'axios';
 
 function LandingPages() {
 	const [ isOpen, setIsOpen ] = useState(false);
-	const [ showPopup, setShowPopup ] = useState(false);
 	const [ isLoading, setIsLoading ] = useState(false)
 	const [ sendMessage, setSendMessage ] = useState('Send Message')
 	const [ errorMessage, setErrorMessage ] = useState(false)
@@ -44,8 +43,6 @@ function LandingPages() {
 			await axios.post(`${BASE_URL}/contact-us`, formData).then((res) => {
 				console.log("Success:", res.data);
 				setSendMessage('Send Successfully')
-				setShowPopup(true);
-				setTimeout(() => setShowPopup(false), 3000);
 				setIsLoading(false)
 				setFormData({
 					name: "",
@@ -306,6 +303,7 @@ function LandingPages() {
 								allowFullScreen
 								loading="lazy"
 								referrerPolicy="no-referrer-when-downgrade"
+								title='location'
 							></iframe>
 						</div>
 						<div className="bg-slate-200 px-8 py-8 shadow-sm">

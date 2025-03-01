@@ -101,15 +101,6 @@ export default function ManageCookies({ setIsVisible, setManageCookies }) {
 		);
 	};
 
-	const handleAcceptAll = () => {
-		setPreferences({
-			necessary: true,
-			performance: true,
-			marketing: true
-		});
-	};
-
-
 	const handleSaveChoices = () => {
 		setIsVisible(false)
 		Cookies.set('cookiesAccepted', true);

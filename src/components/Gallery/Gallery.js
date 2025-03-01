@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import CTA from "../page/CTA";
 import apiClient from "../../lib/apiClient";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 
@@ -10,7 +10,6 @@ const Gallery = () => {
 	const navigate = useNavigate()
 	const [ categories, setCategory ] = useState([]);
 
-	const BASE_URL = process.env.REACT_APP_API_URL;
 
 	useEffect(() => {
 		const fetchCategory = async () => {
@@ -68,9 +67,9 @@ const Gallery = () => {
 								className="bg-white shadow overflow-hidden p-1 text-heading hover:bg-mySky hover:text-white transition-all"
 							>
 								<img
-									src={item.image == undefined ? '/assets/img/no_image_found.jpg' : `${item.image}`}
+									src={item.image === undefined ? '/assets/img/no_image_found.jpg' : `${item.image}`}
 									alt={item.name}
-									className={`w-full h-72 object-cover bg-gray-200 ${item.image == undefined && 'border-b'}`}
+									className={`w-full h-72 object-cover bg-gray-200 ${item.image === undefined && 'border-b'}`}
 								/>
 
 								<div className="p-4">

@@ -24,6 +24,7 @@ const Header = () => {
 
 
 	const searchRef = useRef(null);
+
 	useEffect(() => {
 		function handleClickOutside(event) {
 			if (searchRef.current && !searchRef.current.contains(event.target)) {
