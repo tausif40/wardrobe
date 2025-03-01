@@ -66,6 +66,21 @@ const ContactUs = () => {
 				<meta name="keywords" content="contact best fitted wardrobes, custom wardrobes UK, fitted kitchen consultation, wardrobe installation UK" />
 				<meta name="robots" content="index, follow" />
 				<link rel="canonical" href="https://bestfittedwardrobe.co.uk/contact-us" />
+
+				<script type="application/ld+json">
+					{JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "ContactPage",
+						"name": "Contact Best Fitted Wardrobes",
+						"description": "Need a custom wardrobe or fitted kitchen? Contact us today for a free consultation and expert advice on your storage solutions.",
+						"url": "https://bestfittedwardrobe.co.uk/contact-us",
+						"contactPoint": {
+							"@type": "ContactPoint",
+							"telephone": "+44 1234 567890",
+							"contactType": "Customer Service"
+						}
+					})}
+				</script >
 			</Helmet>
 
 

@@ -37,6 +37,28 @@ export default function FittedKitchens() {
 				<meta name="keywords" content="fitted kitchens UK, modern kitchens, custom kitchen cabinets, space-saving kitchens" />
 				<meta name="robots" content="index, follow" />
 				<link rel="canonical" href="https://bestfittedwardrobe.co.uk/fitted-kitchens" />
+				<script type="application/ld+json">
+					{JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "Product",
+						"name": "Fitted Kitchens",
+						"image": "https://bestfittedwardrobe.co.uk/images/fitted-kitchens.jpg",
+						"description": "Upgrade your kitchen with high-quality fitted kitchen designs. Custom cabinetry, space-saving layouts, and premium materials.",
+						"brand": {
+							"@type": "Brand",
+							"name": "Best Fitted Wardrobes"
+						},
+						"offers": {
+							"@type": "Offer",
+							"url": "https://bestfittedwardrobe.co.uk/fitted-kitchens",
+							"priceCurrency": "GBP",
+							"availability": "https://schema.org/InStock"
+						}
+
+					})}
+				</script >
+				
+
 			</Helmet>
 			<Banner data={data} />
 			<Samples data={sampleData} />

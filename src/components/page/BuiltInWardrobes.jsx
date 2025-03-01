@@ -35,6 +35,26 @@ export default function BuiltInWardrobes() {
 				<meta name="keywords" content="built-in wardrobes UK, custom wardrobes, fitted bedroom wardrobes, modern storage solutions" />
 				<meta name="robots" content="index, follow" />
 				<link rel="canonical" href="https://bestfittedwardrobe.co.uk/built-in-wardrobes" />
+
+				<script type="application/ld+json">
+					{JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "Product",
+						"name": "Built-in Wardrobes",
+						"image": "https://bestfittedwardrobe.co.uk/images/built-in-wardrobes.jpg",
+						"description": "Maximize your space with built-in wardrobes tailored to your needs. Choose from classic, modern, and luxury designs.",
+						"brand": {
+							"@type": "Brand",
+							"name": "Best Fitted Wardrobes"
+						},
+						"offers": {
+							"@type": "Offer",
+							"url": "https://bestfittedwardrobe.co.uk/built-in-wardrobes",
+							"priceCurrency": "GBP",
+							"availability": "https://schema.org/InStock"
+						}
+					})}
+				</script>
 			</Helmet>
 			<Banner data={data} />
 			<Samples data={sampleData} />

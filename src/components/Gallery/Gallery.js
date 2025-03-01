@@ -33,6 +33,21 @@ const Gallery = () => {
 				<meta name="keywords" content="fitted wardrobes gallery, custom wardrobe designs, fitted kitchens gallery, interior design ideas" />
 				<meta name="robots" content="index, follow" />
 				<link rel="canonical" href="https://bestfittedwardrobe.co.uk/gallery" />
+
+				<script type="application/ld+json">
+					{JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "ImageGallery",
+						"name": "Best Fitted Wardrobes Gallery",
+						"description": "Browse our gallery of fitted wardrobes, built-in storage, and fitted kitchens. Get inspired and book a free consultation today!",
+						"url": "https://bestfittedwardrobe.co.uk/gallery",
+						"image": [
+							"https://bestfittedwardrobe.co.uk/images/gallery1.jpg",
+							"https://bestfittedwardrobe.co.uk/images/gallery2.jpg"
+						]
+					})}
+				</script >
+
 			</Helmet>
 
 			<div className='min-h-[400px] max-h-[400px] bg-no-repeat bg-bottom w-full overflow-hidden bg-gray-300' style={{ backgroundImage: "url('/assets/img/bed1.jpeg')" }}>

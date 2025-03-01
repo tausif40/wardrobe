@@ -35,7 +35,27 @@ export default function SlidingWardrobes() {
 				<meta name="keywords" content="sliding wardrobes UK, modern wardrobes, space-saving wardrobes, custom sliding doors" />
 				<meta name="robots" content="index, follow" />
 				<link rel="canonical" href="https://bestfittedwardrobe.co.uk/sliding-wardrobes" />
+				<script type="application/ld+json">
+					{JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "Product",
+						"name": "Sliding Wardrobes",
+						"image": "https://bestfittedwardrobe.co.uk/images/sliding-wardrobes.jpg",
+						"description": "Get sleek and space-saving sliding wardrobes designed to fit any room. Customize colors, materials, and layouts to match your home.",
+						"brand": {
+							"@type": "Brand",
+							"name": "Best Fitted Wardrobes"
+						},
+						"offers": {
+							"@type": "Offer",
+							"url": "https://bestfittedwardrobe.co.uk/sliding-wardrobes",
+							"priceCurrency": "GBP",
+							"availability": "https://schema.org/InStock"
+						}
+					})}
+				</script>
 			</Helmet>
+
 			<Banner data={data} />
 			<Samples data={sampleData} />
 			<div className='my-20'>

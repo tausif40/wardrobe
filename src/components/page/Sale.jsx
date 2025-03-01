@@ -11,6 +11,19 @@ function Sale() {
 				<meta name="keywords" content="fitted wardrobes sale, wardrobe discounts UK, built-in wardrobes sale, kitchen sale UK" />
 				<meta name="robots" content="index, follow" />
 				<link rel="canonical" href="https://bestfittedwardrobe.co.uk/sale" />
+
+				<script type="application/ld+json">
+					{JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "Offer",
+						"name": "Fitted Wardrobes Sale",
+						"description": "Get exclusive discounts on fitted wardrobes, built-in storage, and fitted kitchens. Limited-time offers – order now!",
+						"url": "https://bestfittedwardrobe.co.uk/sale",
+						"priceCurrency": "GBP",
+						"availability": "https://schema.org/InStock",
+						"validFrom": "2025-03-01"
+					})}
+				</script >
 			</Helmet>
 
 			<div className='max-h-[400px] w-full overflow-hidden bg-gray-300'>
