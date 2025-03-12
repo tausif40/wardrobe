@@ -52,13 +52,15 @@ export default function FittedKitchens() {
 							"@type": "Offer",
 							"url": "https://bestfittedwardrobe.co.uk/fitted-kitchens",
 							"priceCurrency": "GBP",
-							"availability": "https://schema.org/InStock"
+							"availability": "https://schema.org/InStock",
+							"seller": {
+								"@type": "Organization",
+								"name": "Best Fitted Wardrobe"
+							}
 						}
-
 					})}
 				</script >
-				
-
+			
 			</Helmet>
 			<Banner data={data} />
 			<Samples data={sampleData} />

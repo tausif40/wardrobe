@@ -41,8 +41,17 @@ const Gallery = () => {
 						"description": "Browse our gallery of fitted wardrobes, built-in storage, and fitted kitchens. Get inspired and book a free consultation today!",
 						"url": "https://bestfittedwardrobe.co.uk/gallery",
 						"image": [
-							"https://bestfittedwardrobe.co.uk/images/gallery1.jpg",
-							"https://bestfittedwardrobe.co.uk/images/gallery2.jpg"
+							// "https://bestfittedwardrobe.co.uk/images/gallery1.jpg",
+							// "https://bestfittedwardrobe.co.uk/images/gallery2.jpg",
+							"https://bestfittedwardrobe.co.uk/gallery/Wardrobes/",
+							"https://bestfittedwardrobe.co.uk/gallery/Sliding Doors/",
+							"https://bestfittedwardrobe.co.uk/gallery/Luxury Wardrobes/",
+							"https://bestfittedwardrobe.co.uk/gallery/Lofts/",
+							"https://bestfittedwardrobe.co.uk/galleryMedia wall /T.V Units/",
+							"https://bestfittedwardrobe.co.uk/gallery/Beds/",
+							"https://bestfittedwardrobe.co.uk/gallery/Fitted Kitchens/",
+							"https://bestfittedwardrobe.co.uk/gallery/Shoe Racks/",
+							"https://bestfittedwardrobe.co.uk/gallery/L-Shape/Diagonal wardrobes/",
 						]
 					})}
 				</script >

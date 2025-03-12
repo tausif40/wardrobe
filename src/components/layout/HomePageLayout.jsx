@@ -15,7 +15,7 @@ function HomePageLayout() {
 				<meta name="keywords" content="fitted wardrobes, built-in wardrobes, sliding wardrobes, custom wardrobes, UK wardrobes" />
 				<meta name="robots" content="index, follow" />
 				<link rel="canonical" href="(https://bestfittedwardrobe.co.uk" />
-				
+
 				<script type="application/ld+json">
 					{JSON.stringify({
 						"@context": "https://schema.org",
@@ -27,11 +27,11 @@ function HomePageLayout() {
 						"telephone": "+44 1234 567890",
 						"address": {
 							"@type": "PostalAddress",
-							"streetAddress": "123 Wardrobe Street",
+							"streetAddress": "Unit A3 Seedbed Centre Davidsonway Romford RM7 0AZ",
 							"addressLocality": "London",
 							"addressCountry": "UK"
 						},
-						"openingHours": "Mo-Sa 09:00-18:00",
+						"openingHours": "Mon-Sat 09:00-18:00",
 						"sameAs": [
 							"https://www.facebook.com/bestfittedwardrobes",
 							"https://www.instagram.com/bestfittedwardrobes"

@@ -76,7 +76,6 @@ function App() {
           <Route path="/*" element={<PageNotFound />} />
         </Route>
         <Route path="/landing-pages" element={<LandingPages />} />
-
         {/* admin */}
         <Route path="/admin" element={<AdminHeader />}>
           <Route index element={<AdminLogin />} />

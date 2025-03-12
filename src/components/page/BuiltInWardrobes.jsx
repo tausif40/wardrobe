@@ -51,7 +51,11 @@ export default function BuiltInWardrobes() {
 							"@type": "Offer",
 							"url": "https://bestfittedwardrobe.co.uk/built-in-wardrobes",
 							"priceCurrency": "GBP",
-							"availability": "https://schema.org/InStock"
+							"availability": "https://schema.org/InStock",
+							"seller": {
+								"@type": "Organization",
+								"name": "Best Fitted Wardrobe"
+							}
 						}
 					})}
 				</script>
