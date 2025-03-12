@@ -10,7 +10,7 @@ import '../../css/gallery.css'
 const CategoryImages = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
-	const name = location.state?.name;
+	const state = location.state;
 
 	const [ images, setImages ] = useState([]);
 	const [ loading, setLoading ] = useState(false);
@@ -18,7 +18,7 @@ const CategoryImages = () => {
 	// console.log(params);
 	useEffect(() => {
 		setLoading(true)
-		apiClient.get(`image?categoryId=${params?.id}`)
+		apiClient.get(`image?categoryId=${state?.id}`)
 			.then(response => {
 				console.log(response?.data?.data);
 				setLoading(false)
@@ -45,7 +45,7 @@ const CategoryImages = () => {
 
 			<div className='container mx-auto  md:mt-8 px-4 py-8'>
 				<p className=" text-4xl md:text-4xl font-semibold text-center text-blue-900 mb-6 md:mb-12 uppercase">
-					{name}
+					{state?.name}
 				</p>
 
 				<button className='flex items-center text-mySky border border-mySky px-6 py-[6px] rounded-full hover:bg-mySky hover:text-white transition-all mb-8'

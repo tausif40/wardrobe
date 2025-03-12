@@ -70,7 +70,7 @@ function App() {
           <Route path="fitted-kitchens" element={<FittedKitchens />} />
           <Route path="sale" element={<Sale />} />
           <Route path="gallery" element={<Gallery />} />
-          <Route path="images/:id" element={<CategoryImages />} />
+          <Route path="gallery/:name" element={<CategoryImages />} />
           <Route path="terms-conditions" element={<TermsAndConditions />} />
           <Route path="payment-terms-and-conditions" element={<PaymentConditions />} />
           <Route path="/*" element={<PageNotFound />} />

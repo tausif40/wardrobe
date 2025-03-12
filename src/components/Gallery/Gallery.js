@@ -21,7 +21,7 @@ const Gallery = () => {
 	}, [])
 
 	const handelNavigate = (id, name) => {
-		navigate(`/images/${id}`, { state: { name: name } })
+		navigate(`/gallery/${name}`, { state: { name: name, id: id } })
 	}
 
 	return (
