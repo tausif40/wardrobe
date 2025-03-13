@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Tooltip } from 'antd';
-import TableLoader from "../Loader/TableLoader";
+import { Pagination, Tooltip } from 'antd';
+import TableLoader from "../../Loader/TableLoader";
 
 const BookConsultation = () => {
 	const [ data, setData ] = useState([]);
 	const [ loading, setLoading ] = useState(true);
 	const [ error, setError ] = useState(null);
 	const [ searchQuery, setSearchQuery ] = useState("");
+	const [ limit, setLimit ] = useState(10);
+	const [ total, setTotal ] = useState();
+	const [ page, setPage ] = useState();
 
 	const BASE_URL = process.env.REACT_APP_API_URL;
 
@@ -17,16 +20,18 @@ const BookConsultation = () => {
 	}, []);
 
 	useEffect(() => {
-		axios.get(`${BASE_URL}/design-bookings`)
+		axios.get(`${BASE_URL}/design-bookings?limit=${limit}&page=${page}`)
 			.then((response) => {
+				console.log(response);
 				setData(response?.data?.bookings);
+				setTotal(response?.data?.totalBookings)
 				setLoading(false);
 			})
 			.catch((error) => {
 				setError(error.message);
 				setLoading(false);
 			});
-	}, []);
+	}, [ limit, page, total ]);
 
 	const handleSearch = (event) => {
 		setSearchQuery(event.target.value.toLowerCase());
@@ -92,6 +97,19 @@ const BookConsultation = () => {
 					</tbody>
 				</table>
 			</div>
+			<div className="flex justify-center mt-12">
+				<Pagination total={total}
+					pageSize={limit}
+					showTotal={(total) => `Total ${total} inquiries`}
+					onChange={(onChange) => setPage(onChange)}
+					showQuickJumper
+					showSizeChanger
+					onShowSizeChange={(current, size) => {
+						setLimit(size);
+						setPage(current);
+					}} />
+			</div>
+
 		</div >
 	);
 };

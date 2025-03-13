@@ -24,7 +24,7 @@ import PageNotFound from './components/page/PageNotFound';
 import LandingPages from './components/LandingPages/LandingPages';
 import UserHeader from './components/layout/UserHeader';
 import AdminHeader from './components/layout/AdminHeader';
-import BookConsultation from './components/BookConsultation/BookConsultation';
+import BookConsultation from './components/Admin/BookConsultation/BookConsultation';
 import HomePage from './components/page/HomePage';
 
 function App() {
